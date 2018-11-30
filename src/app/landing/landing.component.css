@@ -1,0 +1,13 @@
+.landing {
+    background-image: url("../photos/Nexus_Landing_Page_BKG.jpg");
+    height: 100vh;
+    width: 100vw;
+}
+
+.about {
+    height: 100vh;
+}
+
+.success {
+    height: 100vh;
+}
