@@ -1,13 +1,82 @@
+.NavBar{
+    width: 100vw;
+    height: 2.5em;
+    background-color: rgba(255, 255, 255, 1.0);
+    font-family: 'Poppins', sans-serif;
+    margin-top: -1em;
+
+}
+
 .landing {
     background-image: url("../photos/Nexus_Landing_Page_BKG.jpg");
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    margin-top: -.5em;
+}
+
+.button1{
+    width: 100px;
+    height: 20px;
+    margin-top: 50em;
+    margin-left: 55em;
+    border-radius: 25px;
+    background-color: white;
+    font-family: 'Poppins';
+}
+
+.button2{
+    width: 10em;
+    height: 2em;
+    margin-top: 50em;
+    margin-left: 55em;
+    border-radius: 25px;
+    background-color: white;
+}
+
+
+.peyton{
+    margin-left: 20vh;
+    width: 25vw;
+    background-image: url('../photos/peytonCEO.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
 }
 
 .about {
-    height: 100vh;
+    height: 20vh;
+    width: 100vw;
+}
+
+
+.quote{
+    margin-left: 20vh;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-top: 15vh;
+    font-display: bolder;
+}
+
+.aboutBreak{
+    background-image: url("../photos/TeamLine.jpeg");
+    width: 100vw;
+    height: 40vh;
+    background-repeat: no-repeat;
+    background-position-y: 30%;
+    background-position-x: 90%;
 }
 
 .success {
     height: 100vh;
+}
+
+.Home{
+    margin-left: 82vw;
+
+}
+
+.AboutUs{
+    margin-left: 1.5vw;
+}
+
+.Account{
+    margin-left: 1.5vw;
 }
