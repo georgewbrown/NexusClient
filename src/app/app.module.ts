@@ -16,7 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
 import { AuthenticationService } from "./services/authentication.service";
 import { AlertService } from "./services/alert.service";
-import { EmployeeService } from "./services/employee.service"
+import { EmployeeService } from "./services/employee.service";
+import { EmployeeCreateComponent } from './employee-create/employee-create.component';
+import { EmployerCreateComponent } from './employer-create/employer-create.component'
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { EmployeeService } from "./services/employee.service"
     PostsComponent,
     NavbarComponent,
     AlertComponent,
+    EmployeeCreateComponent,
+    EmployerCreateComponent,
   ],
   imports: [
     BrowserModule,

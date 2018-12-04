@@ -1,0 +1,52 @@
+<h2>Login</h2>
+<form [formGroup]="employerCreateForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label>Name:</label>
+    <input type="text" formControlName="name">
+  </div>
+  <div>
+    <label>Email:</label>
+    <input type="email" formControlName="email">
+  </div>
+  <div>
+    <label>Password:</label>
+    <input type="password" formControlName="password">
+  </div>
+  <div>
+    <label>Phone Number:</label>
+    <input type="text" formControlName="phonenumber">
+  </div>
+  <div>
+    <label>Profile Picture:</label>
+    <input type="picture" formControlName="profilepicture">
+  </div>
+  <div>
+    <label>location:</label>
+    <input type="text" formControlName="location">
+  </div>
+  <div>
+    <label>Website:</label>
+    <input type="text" formControlName="website">
+  </div>
+  <div>
+    <label>Linkdin:</label>
+    <input type="text" formControlName="linkdin">
+  </div>
+  <div>
+    <label>FaceBook:</label>
+    <input type="text" formControlName="facebook">
+  </div>
+  <div>
+    <label>Instagram:</label>
+    <input type="text" formControlName="instagram">
+  </div>
+  <div>
+    <label>Twitter:</label>
+    <input type="text" formControlName="twitter">
+  </div>
+  <div>
+    <label>About You:</label>
+    <input type="textarea" formControlName="about">
+  </div>
+  <button type="submit">Submit</button>
+</form>

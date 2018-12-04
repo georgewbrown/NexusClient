@@ -49,15 +49,6 @@
     background-size: auto;
 }
 
-<<<<<<< HEAD
-=======
-.about {
-    height: 20vh;
-    width: 99vw;
-}
-
-
->>>>>>> ddt-landing
 .quote{
     margin-left: 20vh;
     font-family: 'Poppins', sans-serif;
@@ -66,12 +57,8 @@
 }
 
 .aboutBreak{
-<<<<<<< HEAD
     background-image: url("../../assets/TeamLine.jpeg");
     width: 100vw;
-=======
-    background-image: url("../photos/TeamLine.jpeg");
->>>>>>> ddt-landing
     height: 40vh;
     background-repeat: no-repeat;
     background-position-y: 30%;
