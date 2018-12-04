@@ -10,9 +10,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from "./material.module"
 import { MatNativeDateModule } from '@angular/material';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AlertComponent } from './alert/alert.component';
+import { AuthenticationService } from "./services/authentication.service";
+import { AlertService } from "./services/alert.service";
+import { EmployeeService } from "./services/employee.service"
 
 @NgModule({
   declarations: [
@@ -22,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProfileComponent,
     PostsComponent,
     NavbarComponent,
+    AlertComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,7 +38,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

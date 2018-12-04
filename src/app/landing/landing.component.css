@@ -1,10 +1,7 @@
 .NavBar{
-    width: 100vw;
-    height: 2.5em;
+    height: 3vh;
     background-color: rgba(255, 255, 255, 1.0);
     font-family: 'Poppins', sans-serif;
-    margin-top: -1em;
-
 }
 
 .landing {
@@ -52,6 +49,15 @@
     background-size: auto;
 }
 
+<<<<<<< HEAD
+=======
+.about {
+    height: 20vh;
+    width: 99vw;
+}
+
+
+>>>>>>> ddt-landing
 .quote{
     margin-left: 20vh;
     font-family: 'Poppins', sans-serif;
@@ -60,8 +66,12 @@
 }
 
 .aboutBreak{
+<<<<<<< HEAD
     background-image: url("../../assets/TeamLine.jpeg");
     width: 100vw;
+=======
+    background-image: url("../photos/TeamLine.jpeg");
+>>>>>>> ddt-landing
     height: 40vh;
     background-repeat: no-repeat;
     background-position-y: 30%;
