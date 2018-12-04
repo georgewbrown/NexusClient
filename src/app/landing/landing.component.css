@@ -100,5 +100,13 @@
     background-color: rgba(255, 255, 255, 1.0);
     height: 1vh;
     text-align: center;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
+
+/* .Logo{
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    height: 20%;
+    z-index: 5;
+} */
