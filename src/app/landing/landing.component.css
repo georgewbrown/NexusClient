@@ -8,55 +8,59 @@
 }
 
 .landing {
-    background-image: url("../photos/Nexus_Landing_Page_BKG.jpg");
+    background-image: url("../../assets/Nexus_Landing_Page_BKG.jpg");
     height: 100vh;
-    width: 100%;
+    width: 100vw;
     margin-top: -.5em;
 }
 
 .button1{
-    width: 100px;
-    height: 20px;
-    margin-top: 50em;
-    margin-left: 55em;
+    width: 20em;
+    height: 2.5em;
+    margin-top: 35em;
+    margin-left: 39em;
     border-radius: 25px;
-    background-color: white;
-    font-family: 'Poppins';
+    background-color: rgba(255, 255, 255, .7);
+    font-family: 'Poppins' sans-serif;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 .button2{
-    width: 10em;
-    height: 2em;
-    margin-top: 50em;
-    margin-left: 55em;
+    width: 20em;
+    height: 2.5em;
+    margin-top: 10em;
+    margin-left: 5em;
     border-radius: 25px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, .7);
+    font-family: 'Poppins' sans-serif;
+    font-size: 15px;
+    font-weight: 500;
 }
 
 
-.peyton{
-    margin-left: 20vh;
-    width: 25vw;
-    background-image: url('../photos/peytonCEO.jpg');
-    background-repeat: no-repeat;
-    background-size: auto;
-}
-
-.about {
+.testimony {
     height: 20vh;
     width: 100vw;
 }
 
+.peyton{
+    margin-left: 20vh;
+    width: 25vw;
+    background-image: url('../../assets/peytonCEO.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+}
 
 .quote{
     margin-left: 20vh;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-top: 15vh;
     font-display: bolder;
 }
 
 .aboutBreak{
-    background-image: url("../photos/TeamLine.jpeg");
+    background-image: url("../../assets/TeamLine.jpeg");
     width: 100vw;
     height: 40vh;
     background-repeat: no-repeat;
@@ -64,8 +68,13 @@
     background-position-x: 90%;
 }
 
-.success {
-    height: 100vh;
+.about {
+    margin-left: 10vw;
+    height: 25vh;
+    width: 80vw;
+    text-align: center;
+    align-content: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 .Home{
@@ -74,9 +83,25 @@
 }
 
 .AboutUs{
-    margin-left: 1.5vw;
+    margin-left: 82vw;
+    text-decoration: none;
+}
+
+.Jobs{
+    margin-left: 2vw;
+    text-decoration: none;
 }
 
 .Account{
-    margin-left: 1.5vw;
+    margin-left: 2vw;
+    text-decoration: none;
+}
+
+
+.footer{
+    width: 100vw;
+    background-color: rgba(255, 255, 255, 1.0);
+    height: 1vh;
+    text-align: center;
+    font-family: sans-serif;
 }
