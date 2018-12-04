@@ -5,6 +5,7 @@ import { LandingComponent } from './landing/landing.component'
 import { PostsComponent } from './posts/posts.component';
 import { AuthComponent } from './auth/auth.component';
 import { ProfileComponent } from './profile/profile.component'
+import { AccountCreateComponent } from './account-create/account-create.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'posts', component: PostsComponent },
   {path: 'account', component: AuthComponent },
   {path: 'profile', component: ProfileComponent },
+  {path: 'create', component: AccountCreateComponent },
 
 ]
 

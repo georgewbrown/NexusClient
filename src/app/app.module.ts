@@ -17,7 +17,7 @@ import { AlertComponent } from './alert/alert.component';
 import { AuthenticationService } from "./services/authentication.service";
 import { AlertService } from "./services/alert.service";
 import { EmployeeService } from "./services/employee.service";
-import { EmployeeCreateComponent } from './employee-create/employee-create.component';
+import { AccountCreateComponent } from './account-create/account-create.component';
 import { EmployerCreateComponent } from './employer-create/employer-create.component'
 
 @NgModule({
@@ -29,7 +29,7 @@ import { EmployerCreateComponent } from './employer-create/employer-create.compo
     PostsComponent,
     NavbarComponent,
     AlertComponent,
-    EmployeeCreateComponent,
+    AccountCreateComponent,
     EmployerCreateComponent,
   ],
   imports: [

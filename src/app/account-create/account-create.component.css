@@ -1,0 +1,23 @@
+.signUpContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: aquamarine;
+    width: 90vw;
+    margin-left: 5vw;
+  }
+  
+  /* .signUpContainer > * {
+    width: 100vw;
+  } */
+  
+  .signUpContainer form {
+    margin-bottom: 50em;
+  }
+  
+  .signUpContainer form > * {
+    margin: 1em 0em;
+  }
+  
+  .signUpContainer .mat-radio-button {
+    margin: 0em 1em;
+  }
