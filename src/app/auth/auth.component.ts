@@ -25,8 +25,7 @@ export class AuthComponent implements OnInit {
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             name: ['', Validators.required],
-            password: ['', Validators.required],
-            email: ["", Validators.required]
+            password: ['', Validators.required]
         });
 
         // reset login status
@@ -41,6 +40,6 @@ export class AuthComponent implements OnInit {
 
     onSubmit() {
       console.log(this.loginForm.value)
-      this.employeeService.signup(this.loginForm.value).subscribe(res => console.log(res))
+      this.authenticationService.login(this.loginForm.value).subscribe(res => console.log(res))
     }
 }
