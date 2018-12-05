@@ -1,4 +1,12 @@
-<app-navbar></app-navbar>
-<p>
-  posts works!
-</p>
+<h1>Job Posts</h1>
+<div>
+  <div *ngFor="let post of posts">
+    <div><h4>{{ post.jobTitle }}</h4></div>
+    <table>
+      <td>{{ post.location }}</td>
+      <td>{{ post.payRange }}</td>
+      <td>{{ post.skills }}</td>
+      <td>{{ post.jobDescription }}</td>
+    </table>
+  </div>
+</div>
