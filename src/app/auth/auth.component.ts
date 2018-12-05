@@ -8,7 +8,11 @@ import { AuthenticationService } from "../services/authentication.service"
 import { EmployeeService } from "../services/employee.service";
 import { Employee } from "../models/employee"
 
-@Component({templateUrl: 'auth.component.html'})
+@Component({
+    selector: 'auth-component',
+    templateUrl: 'auth.component.html',
+    styleUrls: ['./auth.component.css']
+})
 export class AuthComponent implements OnInit {
     loginForm: FormGroup;
     returnUrl: string;
