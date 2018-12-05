@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {MatDialog} from '@angular/material';
+import { AccountCreateComponent } from '../account-create/account-create.component';
+
 
 @Component({
   selector: 'app-landing',
@@ -7,7 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(public form: MatDialog) { }
+
+  openForm(){
+    const formRef = this.form.open(AccountCreateComponent);
+
+    formRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    })
+  }
 
   ngOnInit() {
   }

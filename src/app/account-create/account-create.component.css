@@ -1,9 +1,7 @@
 .signUpContainer {
     display: flex;
     flex-direction: column;
-    background-color: aquamarine;
-    width: 90vw;
-    margin-left: 5vw;
+    width: 50vw;
   }
   
   /* .signUpContainer > * {

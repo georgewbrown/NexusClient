@@ -9,7 +9,7 @@ import { PostsComponent } from './posts/posts.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from "./material.module"
-import { MatNativeDateModule } from '@angular/material';
+import { MatNativeDateModule, MatDialogModule } from '@angular/material';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -18,7 +18,7 @@ import { AuthenticationService } from "./services/authentication.service";
 import { AlertService } from "./services/alert.service";
 import { EmployeeService } from "./services/employee.service";
 import { AccountCreateComponent } from './account-create/account-create.component';
-import { EmployerCreateComponent } from './employer-create/employer-create.component'
+import { EmployerCreateComponent } from './employer-create/employer-create.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +40,8 @@ import { EmployerCreateComponent } from './employer-create/employer-create.compo
     HttpClientModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule,
   ],
   providers: [HttpClient, AuthenticationService, AlertService, EmployeeService ],
   bootstrap: [AppComponent]
