@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from "./material.module"
 import { MatNativeDateModule } from '@angular/material';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
@@ -19,6 +19,10 @@ import { AlertService } from "./services/alert.service";
 import { EmployeeService } from "./services/employee.service";
 import { EmployeeCreateComponent } from './employee-create/employee-create.component';
 import { EmployerCreateComponent } from './employer-create/employer-create.component'
+import { AuthenticationGuard } from './guards/authentication.guard';
+import { EmployerService } from "./services/employer.service";
+import { JwtInterceptor } from "./helpers/jwt.interceptor";
+import { ErrorInterceptor } from "./helpers/error.interceptor";
 
 @NgModule({
   declarations: [
@@ -42,7 +46,8 @@ import { EmployerCreateComponent } from './employer-create/employer-create.compo
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService ],
+  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -8,6 +8,6 @@ export class EmployeeService {
   constructor(private http: HttpClient) { }
 
   signup(employee: Employee) {
-    return this.http.post("http://localhost:3000/employee/signup", employee)
+    return this.http.post("https://nexuserver.herokuapp.com/employee/signup", employee)
   }
 }
