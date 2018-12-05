@@ -7,7 +7,7 @@ export class AuthenticationService {
     constructor(private http: HttpClient) { }
 
     login(user: object) {
-        return this.http.post<any>("http://localhost:3000/employee/signin", user )
+        return this.http.post<any>("https://nexuserver.herokuapp.com/employee/signin", user )
             .pipe(map(user => {
                 // login successful if there's a jwt token in the response
                 if (user && user.token) {

@@ -1,6 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
 import { AuthComponent } from './auth/auth.component';
@@ -9,8 +8,8 @@ import { PostsComponent } from './posts/posts.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MaterialModule } from "./material.module"
-import { MatNativeDateModule, MatDialogModule } from '@angular/material';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { MatNativeDateModule } from '@angular/material';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations"
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AlertComponent } from './alert/alert.component';
@@ -18,7 +17,11 @@ import { AuthenticationService } from "./services/authentication.service";
 import { AlertService } from "./services/alert.service";
 import { EmployeeService } from "./services/employee.service";
 import { AccountCreateComponent } from './account-create/account-create.component';
-import { EmployerCreateComponent } from './employer-create/employer-create.component';
+import { EmployerCreateComponent } from './employer-create/employer-create.component'
+import { AuthenticationGuard } from './guards/authentication.guard';
+import { EmployerService } from "./services/employer.service";
+import { JwtInterceptor } from "./helpers/jwt.interceptor";
+import { ErrorInterceptor } from "./helpers/error.interceptor";
 
 @NgModule({
   declarations: [
@@ -41,9 +44,9 @@ import { EmployerCreateComponent } from './employer-create/employer-create.compo
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    MatDialogModule,
   ],
-  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService ],
+  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
