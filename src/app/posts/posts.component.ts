@@ -16,7 +16,11 @@ export class PostsComponent implements OnInit {
   }
 
   getPosts() {
+<<<<<<< HEAD
     this.postsService.getPosts().subscribe((res: any) => {this.posts = res.post, console.log(res.post)})
+=======
+    this.postsService.getPosts().subscribe((res: any) => {this.posts = res.post, console.log(res)})
+>>>>>>> 0d52a02f56ab8aeb4917ce4e65394b46c466de12
   }
 
 }
