@@ -2,6 +2,10 @@
 <mat-dialog-content class="mat-typography">
 <div class="signUpContainer">
 <form [formGroup]="AccountCreateForm" (ngSubmit)="onSubmit()">
+  <mat-radio-group>
+    <mat-radio-button value="1">Business</mat-radio-button>
+    <mat-radio-button value="2">Freelance</mat-radio-button>
+  </mat-radio-group>
   <div>
     <label>Name:</label>
     <input type="text" formControlName="name">
@@ -50,7 +54,7 @@
     <label>About You:</label>
     <input type="textarea" formControlName="about">
   </div>
-  <button type="submit">Submit</button>
+  <!-- <button type="submit">Submit</button> -->
 </form>
 </div>
 </mat-dialog-content>
