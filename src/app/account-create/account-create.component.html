@@ -2,21 +2,33 @@
 <mat-dialog-content class="mat-typography">
 <div class="signUpContainer">
 <form [formGroup]="AccountCreateForm" (ngSubmit)="onSubmit()">
-  <mat-radio-group>
-    <mat-radio-button value="1">Business</mat-radio-button>
-    <mat-radio-button value="2">Freelance</mat-radio-button>
+  <mat-radio-group [required]="true">
+    <div>Please select a button</div>
+    <br />
+    <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
+    <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
   </mat-radio-group>
   <div>
-    <label>Name:</label>
-    <input type="text" formControlName="name">
+    <label>Username:</label>
+    <input type="text" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+      <div *ngIf="f.name.errors.required">Username is required!</div>
+    </div>
   </div>
   <div>
     <label>Email:</label>
-    <input type="email" formControlName="email">
+    <input type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+        <div *ngIf="f.email.errors.required">Email is required!</div>
+        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+      </div>
   </div>
   <div>
     <label>Password:</label>
-    <input type="password" formControlName="password">
+    <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.required">Password is required!</div>
+      </div>
   </div>
   <div>
     <label>Profile Picture:</label>
@@ -54,12 +66,11 @@
     <label>About You:</label>
     <input type="textarea" formControlName="about">
   </div>
-  <!-- <button type="submit">Submit</button> -->
 </form>
 </div>
 </mat-dialog-content>
-<mat-dialog-actions align="end">
-    <button mat-button mat-dialog-close>Cancel</button>
-    <button mat-button [mat-dialog-close]="submit" cdkFocusInitial>Sign Up</button>
+<mat-dialog-actions>
+    <button mat-button cdkFocusInitial type="button" mat-dialog-close>Cancel</button>
+    <button mat-button mat-dialog-close (click)="onSubmit()" [disabled]="!AccountCreateForm.valid">Sign Up</button>
 </mat-dialog-actions>
 

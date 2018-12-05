@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MatDialog} from '@angular/material';
 import { AccountCreateComponent } from '../account-create/account-create.component';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 
 @Component({
@@ -9,8 +10,11 @@ import { AccountCreateComponent } from '../account-create/account-create.compone
   styleUrls: ['./landing.component.css']
 })
 export class LandingComponent implements OnInit {
+  typeOfAccount: string
+  AccountCreateForm: FormGroup
+  submitted: boolean = false
 
-  constructor(public form: MatDialog) { }
+  constructor(public form: MatDialog, private formBuilder: FormBuilder) { }
 
   openForm(){
     const formRef = this.form.open(AccountCreateComponent);
@@ -22,5 +26,7 @@ export class LandingComponent implements OnInit {
 
   ngOnInit() {
   }
+
+
 
 }
