@@ -1,22 +1,21 @@
-<div>
-<div class="authBackground"></div>
-<div class="authBox">
-<h2>Login</h2>
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-  <div>
-    <label>Username or Email:</label>
-    <input name="name" type="text" formControlName="name" (keyup)="handleName($event)" required>
-    <!-- <div *ngIf="name.errors.required">Username is required!</div> -->
+<div class="authContainer">
+  <div class="authBox">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div>
+        <label></label>
+        <input name="name" type="text" placeholder="Username or Email" formControlName="name" (keyup)="handleName($event)" required>
+        <!-- <div *ngIf="name.errors.required">Username is required!</div> -->
+      </div>
+      <div>
+        <label></label>
+        <input name="password" type="password" placeholder="Password" formControlName="password" (keyup)="handlePassword($event)" required>
+      </div>
+      <button type="submit">Submit</button>
+      <br />
+      <label>Don't have an account?</label>
+      <button>Sign Up!</button>
+    </form>
+    <div class="authBackground"></div>
   </div>
-  <div>
-    <label>Password:</label>
-    <input name="password" type="password" formControlName="password" (keyup)="handlePassword($event)" required>
-  </div>
-  <button type="submit">Submit</button>
-  <br />
-  <label>Don't have an account?</label>
-  <button>Sign Up!</button>
-</form>
 </div>
-</div>
-

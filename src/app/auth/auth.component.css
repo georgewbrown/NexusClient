@@ -1,11 +1,26 @@
-.authBackground{
+.authContainer{
     background-image: url('../../assets/login_page.jpg');
     height: 100vh;
     width: 100vw;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover, cover;
 }
 
 .authBox{
     width: 20vw;
-    height: 40vh;
-    background-color: blue;
+    height: 25vh;
+    background-color: rgba(56, 186, 223, .5);
+    margin-left: 38vw;
+    font-family: 'Poppin', sans-serif;
+    text-align: center;
+    box-shadow: 15,15,15,15;
+    position: relative;
+    /* margin-top: 25em; */
+    float: center;
+    /* padding-top: 25em; */
 }
+
+
+
+
