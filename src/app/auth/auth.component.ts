@@ -6,6 +6,7 @@ import { first } from 'rxjs/operators';
 import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from "../services/authentication.service"
 import { EmployeeService } from "../services/employee.service";
+import { EmployerService } from "../services/employer.service"
 import { Employee } from "../models/employee"
 import { AccountCreateComponent } from '../account-create/account-create.component';
 import { MatDialog } from '@angular/material';
@@ -27,20 +28,19 @@ export class AuthComponent implements OnInit {
     constructor(
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
-        private authenticationService: AuthenticationService,
+        private employerService: EmployerService,
         private employeeService: EmployeeService,
         private alertService: AlertService,
         public form: MatDialog,) {}
 
     ngOnInit() {
-        
         this.loginForm = this.formBuilder.group({
             name: [this.name, Validators.required],
             password: [this.password, Validators.required]
         });
         
         // reset login status
-        this.authenticationService.logout();
+        // this.authenticationService.logout();
 
         // get return url from route parameters or default to '/'
         this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
@@ -51,12 +51,10 @@ export class AuthComponent implements OnInit {
 
     handleName(event: any) {
         this.name = event.target.value
-        console.log(this.name)
     }
 
     handlePassword(event: any) {
         this.password = event.target.value
-        console.log(this.password)
     }
 
     handleAccountType(event) {
@@ -75,15 +73,18 @@ export class AuthComponent implements OnInit {
 
     onSubmit() {
         this.handleUser()
-      this.authenticationService.login(this.user).subscribe(res => console.log(res))
+        if (this.typeOfAccount === "freelance") {
+            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
+        } else {
+            this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
+        }
+      
     }
 
     openForm(){
         const formRef = this.form.open(AccountCreateComponent);
     
-        formRef.afterClosed().subscribe(result => {
-          console.log(`Dialog result: ${result}`);
-        })
+        formRef.afterClosed()
       }
 
 }
