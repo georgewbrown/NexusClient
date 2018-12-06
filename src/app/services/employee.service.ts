@@ -10,4 +10,8 @@ export class EmployeeService {
   register(employee: object): Observable<any> {
     return this.http.post("https://nexuserver.herokuapp.com/employee/signup", employee)
   }
+
+  login(employee: object): Observable<any> {
+    return this.http.post("https://nexuserver.herokuapp.com/employee/signin", employee)
+  }
 }
