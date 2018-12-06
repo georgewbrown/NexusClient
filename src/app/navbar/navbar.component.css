@@ -19,8 +19,8 @@ button {
     text-align: center;
 }
 
-.auth, .profile, .posts {
-    flex: 1 1 auto;
+.auth, .profile, .posts, .home{
+    flex: auto;
 }
 
 a {

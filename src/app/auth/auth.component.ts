@@ -20,6 +20,7 @@ export class AuthComponent implements OnInit {
     returnUrl: string;
     name: string;
     password: string;
+    typeOfAccount: string;
     user;
 
 
@@ -56,6 +57,10 @@ export class AuthComponent implements OnInit {
     handlePassword(event: any) {
         this.password = event.target.value
         console.log(this.password)
+    }
+
+    handleAccountType(event) {
+        this.typeOfAccount = event.value
     }
 
     handleUser() {

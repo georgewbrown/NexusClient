@@ -3,20 +3,20 @@
   <div class="signUpContainer">
     <form [formGroup]="AccountCreateForm" (ngSubmit)="onSubmit()">
         <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount" [ngModelOptions]="{standalone: true}">
-          <div>Please select a button:</div>
+          <div>Please select a button (required):</div>
           <br />
           <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
           <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
         </mat-radio-group>
       <div>
-        <label>Username:</label>
+        <label>Username (required): </label>
         <input type="text" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
         <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
           <div *ngIf="f.name.errors.required">Username is required!</div>
         </div>
       </div>
       <div>
-        <label>Email:</label>
+        <label>Email (required): </label>
         <input type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
           <div *ngIf="f.email.errors.required">Email is required!</div>
@@ -24,46 +24,46 @@
         </div>
       </div>
       <div>
-        <label>Password:</label>
+        <label>Password (required): </label>
         <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
           <div *ngIf="f.password.errors.required">Password is required!</div>
         </div>
       </div>
       <div>
-        <label>Profile Picture:</label>
+        <label>Profile Picture: </label>
         <input type="picture" formControlName="profilepicture">
       </div>
       <div>
-        <label>Phone Number:</label>
+        <label>Phone Number: </label>
         <input type="text" formControlName="phonenumber">
       </div>
       <div>
-        <label>location:</label>
+        <label>location: </label>
         <input type="text" formControlName="location">
       </div>
       <div>
-        <label>Linkdin:</label>
+        <label>Linkdin: </label>
         <input type="text" formControlName="linkdin">
       </div>
       <div>
-        <label>FaceBook:</label>
+        <label>FaceBook: </label>
         <input type="text" formControlName="facebook">
       </div>
       <div>
-        <label>Instagram:</label>
+        <label>Instagram: </label>
         <input type="text" formControlName="instagram">
       </div>
       <div>
-        <label>Twitter:</label>
+        <label>Twitter: </label>
         <input type="text" formControlName="twitter">
       </div>
       <div>
-        <label>Skills:</label>
+        <label>Skills: </label>
         <input type="options" formControlName="skills">
       </div>
       <div>
-        <label>About You:</label>
+        <label>About You: </label>
         <input type="textarea" formControlName="about">
       </div>
     </form>

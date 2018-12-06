@@ -18,10 +18,6 @@ export class LandingComponent implements OnInit {
 
   openForm(){
     const formRef = this.form.open(AccountCreateComponent);
-
-    formRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    })
   }
 
   ngOnInit() {
