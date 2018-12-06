@@ -7,6 +7,8 @@ import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from "../services/authentication.service"
 import { EmployeeService } from "../services/employee.service";
 import { Employee } from "../models/employee"
+import { AccountCreateComponent } from '../account-create/account-create.component';
+import { MatDialog } from '@angular/material';
 
 @Component({
     selector: 'auth-component',
@@ -26,7 +28,8 @@ export class AuthComponent implements OnInit {
         private route: ActivatedRoute,
         private authenticationService: AuthenticationService,
         private employeeService: EmployeeService,
-        private alertService: AlertService) {}
+        private alertService: AlertService,
+        public form: MatDialog,) {}
 
     ngOnInit() {
         
@@ -69,5 +72,13 @@ export class AuthComponent implements OnInit {
         this.handleUser()
       this.authenticationService.login(this.user).subscribe(res => console.log(res))
     }
+
+    openForm(){
+        const formRef = this.form.open(AccountCreateComponent);
+    
+        formRef.afterClosed().subscribe(result => {
+          console.log(`Dialog result: ${result}`);
+        })
+      }
 
 }
