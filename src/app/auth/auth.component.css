@@ -1,5 +1,16 @@
+.background{
+    height: 100vh;
+    width:100%;
+    max-height: 100%;
+    margin:auto;
+    background: url(../../assets/login_page.jpg) no-repeat;
+    background-size: cover;
+    position: fixed;
+  }
+
+
 .authContainer{
-    background-image: url('../../assets/login_page.jpg');
+    /* background-image: url('../../assets/login_page.jpg'); */
     height: 100vh;
     width: 100vw;
     background-position: center;
@@ -11,16 +22,23 @@
     width: 20vw;
     height: 25vh;
     background-color: rgba(56, 186, 223, .5);
+    margin-top: 21vw;
     margin-left: 38vw;
     font-family: 'Poppin', sans-serif;
     text-align: center;
     box-shadow: 15,15,15,15;
     position: relative;
     /* margin-top: 25em; */
-    float: center;
+    /* float: center; */
     /* padding-top: 25em; */
+    /* margin: 0 auto */
 }
 
+.unBox, .pwBox{
+    width: 22em;
 
+}
 
-
+.things{
+    margin: 0 auto;
+}

@@ -1,27 +1,8 @@
-<<<<<<< HEAD
-<div class="authContainer">
-  <div class="authBox">
-    <h2>Login</h2>
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <div>
-        <label></label>
-        <input name="name" type="text" placeholder="Username or Email" formControlName="name" (keyup)="handleName($event)" required>
-        <!-- <div *ngIf="name.errors.required">Username is required!</div> -->
-      </div>
-      <div>
-        <label></label>
-        <input name="password" type="password" placeholder="Password" formControlName="password" (keyup)="handlePassword($event)" required>
-      </div>
-      <button type="submit">Submit</button>
-      <br />
-      <label>Don't have an account?</label>
-      <button mat-button (click)="openForm()">Sign Up!</button>
-    </form>
-    <div class="authBackground"></div>
-  </div>
-=======
 <app-navbar></app-navbar>
-<div class="authBackground">
+<div class="background">
+<div class="authContainer">
+<div class="authBox">
+  
   <h2>Login</h2>
   <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount">
     <div>Please select a button (required):</div>
@@ -31,19 +12,22 @@
   </mat-radio-group>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
-      <label>Username or Email:</label>
-      <input name="name" type="text" formControlName="name" (keyup)="handleName($event)" required>
+      <br />
+      <label></label>
+      <input class="unBox" name="name" type="text" placeholder="Username or Email" formControlName="name" (keyup)="handleName($event)" required>
       <!-- <div *ngIf="name.errors.required">Username is required!</div> -->
     </div>
     <div>
-      <label>Password:</label>
-      <input name="password" type="password" formControlName="password" (keyup)="handlePassword($event)" required>
+      <label></label>
+      <br />
+      <input class="pwBox" name="password" type="password" placeholder="Password" formControlName="password" (keyup)="handlePassword($event)" required>
     </div>
     <button type="submit" [disabled]="typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Submit</button>
     <br />
     <label>Don't have an account?</label>
-    <button>Sign Up!</button>
+    <button mat-button (click)="openForm()">Sign Up!</button>
   </form>
 
->>>>>>> ddt-landing
+</div>
+</div>
 </div>
