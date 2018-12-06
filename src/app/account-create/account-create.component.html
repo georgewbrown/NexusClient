@@ -1,76 +1,75 @@
 <h2 mat-dialog-title>Sign Up</h2>
 <mat-dialog-content class="mat-typography">
-<div class="signUpContainer">
-<form [formGroup]="AccountCreateForm" (ngSubmit)="onSubmit()">
-  <mat-radio-group [required]="true">
-    <div>Please select a button</div>
-    <br />
-    <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
-    <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
-  </mat-radio-group>
-  <div>
-    <label>Username:</label>
-    <input type="text" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
-    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-      <div *ngIf="f.name.errors.required">Username is required!</div>
-    </div>
-  </div>
-  <div>
-    <label>Email:</label>
-    <input type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
-    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-        <div *ngIf="f.email.errors.required">Email is required!</div>
-        <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+  <div class="signUpContainer">
+    <form [formGroup]="AccountCreateForm" (ngSubmit)="onSubmit()">
+        <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount" [ngModelOptions]="{standalone: true}">
+          <div>Please select a button:</div>
+          <br />
+          <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
+          <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
+        </mat-radio-group>
+      <div>
+        <label>Username:</label>
+        <input type="text" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+          <div *ngIf="f.name.errors.required">Username is required!</div>
+        </div>
       </div>
-  </div>
-  <div>
-    <label>Password:</label>
-    <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-    <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-        <div *ngIf="f.password.errors.required">Password is required!</div>
+      <div>
+        <label>Email:</label>
+        <input type="email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+          <div *ngIf="f.email.errors.required">Email is required!</div>
+          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
+        </div>
       </div>
+      <div>
+        <label>Password:</label>
+        <input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">Password is required!</div>
+        </div>
+      </div>
+      <div>
+        <label>Profile Picture:</label>
+        <input type="picture" formControlName="profilepicture">
+      </div>
+      <div>
+        <label>Phone Number:</label>
+        <input type="text" formControlName="phonenumber">
+      </div>
+      <div>
+        <label>location:</label>
+        <input type="text" formControlName="location">
+      </div>
+      <div>
+        <label>Linkdin:</label>
+        <input type="text" formControlName="linkdin">
+      </div>
+      <div>
+        <label>FaceBook:</label>
+        <input type="text" formControlName="facebook">
+      </div>
+      <div>
+        <label>Instagram:</label>
+        <input type="text" formControlName="instagram">
+      </div>
+      <div>
+        <label>Twitter:</label>
+        <input type="text" formControlName="twitter">
+      </div>
+      <div>
+        <label>Skills:</label>
+        <input type="options" formControlName="skills">
+      </div>
+      <div>
+        <label>About You:</label>
+        <input type="textarea" formControlName="about">
+      </div>
+    </form>
   </div>
-  <div>
-    <label>Profile Picture:</label>
-    <input type="picture" formControlName="profilepicture">
-  </div>
-  <div>
-    <label>Phone Number:</label>
-    <input type="text" formControlName="phonenumber">
-  </div>
-  <div>
-    <label>location:</label>
-    <input type="text" formControlName="location">
-  </div>
-  <div>
-    <label>Linkdin:</label>
-    <input type="text" formControlName="linkdin">
-  </div>
-  <div>
-    <label>FaceBook:</label>
-    <input type="text" formControlName="facebook">
-  </div>
-  <div>
-    <label>Instagram:</label>
-    <input type="text" formControlName="instagram">
-  </div>
-  <div>
-    <label>Twitter:</label>
-    <input type="text" formControlName="twitter">
-  </div>
-  <div>
-    <label>Skills:</label>
-    <input type="options" formControlName="skills">
-  </div>
-  <div>
-    <label>About You:</label>
-    <input type="textarea" formControlName="about">
-  </div>
-</form>
-</div>
 </mat-dialog-content>
 <mat-dialog-actions>
-    <button mat-button cdkFocusInitial type="button" mat-dialog-close>Cancel</button>
-    <button mat-button mat-dialog-close (click)="onSubmit()" [disabled]="!AccountCreateForm.valid">Sign Up</button>
+  <button mat-button cdkFocusInitial type="button" mat-dialog-close>Cancel</button>
+  <button mat-button mat-dialog-close (click)="onSubmit()" [disabled]="!AccountCreateForm.valid || typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Sign Up</button>
 </mat-dialog-actions>
-
