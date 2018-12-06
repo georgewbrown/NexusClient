@@ -3,6 +3,14 @@
     flex-direction: column;
     width: 50vw;
   }
+
+.title{
+  text-align: center;
+}
+
+.formItems{
+  text-align: center;
+}
   
   .signUpContainer form {
     margin-bottom: 50em;
