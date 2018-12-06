@@ -13,9 +13,8 @@ export class AccountCreateComponent implements OnInit {
   typeOfAccount: string
   AccountCreateForm: FormGroup
   submitted: boolean = false
-  submitDisabled: boolean = true
 
-  constructor(private formBuilder: FormBuilder, private employeeService: EmployeeService, private employerService: EmployerService) {}
+  constructor(private formBuilder: FormBuilder, private employeeService: EmployeeService, private employerService: EmployerService) { }
 
 
 
@@ -33,10 +32,15 @@ export class AccountCreateComponent implements OnInit {
       twitter: '',
       skills: '',
       about: '',
-  });
+    });
+    this.setValue()
   }
 
   get f() { return this.AccountCreateForm.controls; }
+
+  setValue() {
+    this.typeOfAccount = ""
+  }
 
   handleButton(event) {
     this.typeOfAccount = event.value
@@ -44,6 +48,7 @@ export class AccountCreateComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true
+    console.log(this.typeOfAccount)
 
     if (this.typeOfAccount === "freelance") {
       this.employeeService.register(this.AccountCreateForm.value).subscribe(res => console.log(res))

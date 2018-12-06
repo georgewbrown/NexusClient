@@ -6,6 +6,7 @@ import { PostsService } from "../services/posts.service"
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
+
 export class PostsComponent implements OnInit {
   posts;
 
