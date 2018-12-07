@@ -1,11 +1,9 @@
-<button (click)="toggleCollapse()" type="button">X</button>
-<div class="collapse show" [@collapse]="collapse">
-<mat-toolbar class="toolbar" color="primary">
-  <mat-toolbar-row class="toolbar-row1">
-    <span class="home"><a href="/">Home</a></span>
-    <span class="auth"><a href="/account">Sign in/up</a></span>
-    <span class="jobs"><a href="/posts">Job Posts</a></span>
-    <span class="profile"><a href="/profile">Profile</a></span>
-  </mat-toolbar-row>
-</mat-toolbar>
-</div>
+<nav class="NavBar" >
+    <!-- <img src="../../assets/nexus_X.png" class="Logo" /> -->
+    <ul>
+      <a class="AboutUs" href="http://localhost:4200/landing#aboutSect">ABOUT US</a>
+      <a class="Jobs" routerLink="/posts">JOBS</a>
+      <a class="Account" routerLink="/account">ACCOUNT</a>
+    </ul>
+    
+  </nav>

@@ -1,9 +1,17 @@
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins');
+</style>
+
 <app-navbar></app-navbar>
 <div class="background">
 <div class="authContainer">
+    
 <div class="authBox">
   
-  <h2>Login</h2>
+  <h2 class="title">Login</h2>
+  <hr />
+  <br />
+  <br />
   <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount">
     <div>Please select a button (required):</div>
     <br />
@@ -12,6 +20,7 @@
   </mat-radio-group>
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
+      <br />
       <br />
       <label></label>
       <input class="unBox" name="name" type="text" placeholder="Username or Email" formControlName="name" (keyup)="handleName($event)" required>
@@ -22,12 +31,15 @@
       <br />
       <input class="pwBox" name="password" type="password" placeholder="Password" formControlName="password" (keyup)="handlePassword($event)" required>
     </div>
-    <button type="submit" [disabled]="typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Submit</button>
+    <br />
+    <button class="button" type="submit" [disabled]="typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Login</button>
+    <br />
+    <br />
+    <br />
     <br />
     <label>Don't have an account?</label>
-    <button mat-button (click)="openForm()">Sign Up!</button>
+    <button class="signUp" mat-button (click)="openForm()">Sign Up!</button>
   </form>
-
 </div>
 </div>
 </div>

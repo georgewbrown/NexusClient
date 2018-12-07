@@ -1,29 +1,24 @@
-button {
-    position: fixed;
-    margin-left: 5px;
-    margin-top: 2vh;
-    border-radius: 50%;
-    text-decoration: none;
-    border: none;
+.NavBar{
+    height: 3vh;
+    background-color: rgba(255, 255, 255, 1.0);
+    font-family: 'Poppins', sans-serif;
 }
 
-.toolbar {
-    position: fixed;
+.Home{
+    margin-left: 82vw;
+}
+
+.AboutUs{
+    margin-left: 82vw;
+    text-decoration: none;
+}
+
+.Jobs{
     margin-left: 2vw;
-    border-radius: 10% 10% 10% 10%;
-    width: 95vw;
-}
-
-.toolbar-row1 {
-    border-radius: 10% 10% 10% 10%;
-    text-align: center;
-}
-
-.auth, .profile, .posts, .home{
-    flex: auto;
-}
-
-a {
     text-decoration: none;
-    color: #fad139;
+}
+
+.Account{
+    margin-left: 2vw;
+    text-decoration: none;
 }
