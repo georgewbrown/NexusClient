@@ -1,0 +1,46 @@
+.jumbotronBKG {
+    background-image: url("../../assets/HighFiveBlue.png");
+    height: 50vh;
+    width: 100vw;
+    background-size: cover;
+    margin-top: -6.5em;
+    background-repeat: no-repeat;
+    background-position-y: -12em;
+}
+
+.pageTitle{
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10em;
+    text-align: center;
+    padding-top: 1em;
+}
+
+mat-card{
+    width: 75vw;
+    height: 5em;
+    margin-left: 12.5vw;
+    
+}
+
+/* .searhingInfo{
+    width: 15vw;
+    height: 10vh;
+    background-color: white;
+    box-shadow: .5em .5em 3em #c0c0c0;
+    margin-left: 7vw;
+    margin-top: -4.25em;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+.contactInfo{
+    width: 15vw;
+    height: 10vh;
+    background-color: white;
+    box-shadow: .5em .5em 3em #c0c0c0;
+    margin-left: 25vw;
+    margin-top: -2.25em;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+} */

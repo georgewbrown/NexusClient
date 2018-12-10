@@ -215,7 +215,7 @@
 
 
 
-@media (min-width: 320px) and (max-width: 480px){
+@media (min-width: 320px) and (max-width: 1024px){
     .NavBar{
         height: 6vh;
         width: 100vw;
