@@ -17,11 +17,38 @@
 }
 
 mat-card{
-    width: 75vw;
-    height: 5em;
-    margin-left: 12.5vw;
+    background: #fff;
+    padding: 20px;
+    margin: 1em auto;
+    border-radius: 1.5em;
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 85vw;
     
 }
+
+#left-column{
+    float: left;
+    width: 30%;
+}
+
+mat-card:hover {
+    box-shadow: 0 8px 16px .8px #888888;
+  }
+
+
+  /* @media (min-width: 840px) {
+    main section#card {
+      grid-area: card;
+      height: -webkit-fit-content;
+      height: -moz-fit-content;
+      height: fit-content;
+      -ms-flex-item-align: center;
+          -ms-grid-row-align: center;
+          align-self: center;
+      margin: 1em;
+    }
+  } */
 
 /* .searhingInfo{
     width: 15vw;

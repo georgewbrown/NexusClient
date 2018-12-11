@@ -1,7 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
-@Injectable()
+@Injectable({
+  providedIn: "root"
+})
 export class TransferService {
 
   constructor() { }
@@ -14,14 +16,8 @@ export class TransferService {
   }
 
   getData(){
-    let temp = this.data;
-    this.clearData();
-    console.log(temp)
-    return temp;
-  }
-
-  clearData(){
-    this.data = undefined;
+    console.log(this.data)
+    return this.data;
   }
 
 }

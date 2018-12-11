@@ -25,8 +25,8 @@
     margin-left: 38vw;
     font-family: 'Poppin', sans-serif;
     text-align: center;
-    position: relative;
     box-shadow: 0em 2em 3em #888888;
+    border-radius: 1em;
 }
 
 .unBox, .pwBox{

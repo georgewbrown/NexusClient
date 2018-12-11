@@ -16,7 +16,7 @@ export class ProfileComponent implements OnInit {
   constructor(private employeeService: EmployeeService, public form: MatDialog) { }
 
   ngOnInit() {
-    this.employeeService.get(sessionStorage.getItem("id")).subscribe(res => {console.log(res), this.profile = res})
+    this.employeeService.get(sessionStorage.getItem("id")).subscribe(res => this.profile = res)
   }
 
   update() {
@@ -24,9 +24,13 @@ export class ProfileComponent implements OnInit {
   }
 
   openForm(){
-    const formRef = this.form.open(AccountUpdateComponent);
+    const formRef = this.form.open(AccountUpdateComponent, {
+      data: {
+        account: this.profile
+      }
+    });
 
-    formRef.afterClosed()
+    formRef.afterClosed().subscribe(res => console.log(res))
   }
 
 }

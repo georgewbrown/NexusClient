@@ -1,19 +1,13 @@
 <h2 class="title" mat-dialog-title>SIGN UP FOR NEXUS</h2>
 <mat-dialog-content class="mat-typography">
   <div class="signUpContainer">
-    <form [formGroup]="AccountCreateForm" (ngSubmit)="onSubmit()">
-      <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount" [ngModelOptions]="{standalone: true}">
-        <div>Please select a button (required):</div>
-        <br />
-        <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
-        <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
-      </mat-radio-group>
+    <form [formGroup]="AccountUpdateForm" (ngSubmit)="onSubmit()">
       <label></label>
-      <input type="text" class="inputBox" placeholder="Username*" formControlName="name">
+      <input type="text" class="inputBox" placeholder="Username" formControlName="name">
       <label></label>
-      <input type="email" class="inputBox" placeholder="Email*" formControlName="email">
+      <input type="email" class="inputBox" placeholder="Email" formControlName="email">
       <label></label>
-      <input type="password" class="inputBox" placeholder="password*" formControlName="password">
+      <input type="password" class="inputBox" placeholder="password" formControlName="password">
       <label></label>
       <input type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilePicture">
       <label></label>

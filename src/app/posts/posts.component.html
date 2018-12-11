@@ -1,11 +1,28 @@
 <app-navbar></app-navbar>
+
 <body>
-    <div class="jumbotronBKG">
-      <h1 class="pageTitle">NEXUS CAREERS!</h1>
-    </div>
-    <br />
-    <br />
-    <br />
+  <div class="jumbotronBKG">
+    <h1 class="pageTitle">NEXUS CAREERS!</h1>
+  </div>
+  <br />
+  <br />
+
+  <div *ngFor="let post of posts" id="card">
+    <mat-card>
+      <section id="left-column">
+        <h2>{{ post.jobTitle }}</h2>
+        <h3>{{ post.location }}</h3>
+      </section>
+      <section id="right-column">
+        <p> {{ post.skills }}</p>
+        <p> {{ post.jobDescription }}</p>
+      </section>
+    </mat-card>
+  </div>
+
+</body>
+
+
 <!-- 
     <div class="searhingInfo">
       <h2>SEARCH</h2>
@@ -16,20 +33,3 @@
         <h2>CONTACT</h2>
         <p>contact the employer</p>
       </div> -->
-
-   
-        <div *ngFor="let post of posts">
-          <mat-card>
-            <div><h4>{{ post.jobTitle }}</h4></div>
-            <table>
-              <td>{{ post.location }}</td>
-              <td>{{ post.payRange }}</td>
-              <td>{{ post.skills }}</td>
-              <td>{{ post.jobDescription }}</td>
-            </table>
-          </mat-card>
-          <br />
-          hy</div>
-    
-
-</body>
