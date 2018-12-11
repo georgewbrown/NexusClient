@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EmployerService } from "../services/employer.service";
 import { EmployeeService } from "../services/employee.service";
 import { Employee } from '../models/employee.model';
+import { Employer } from "../models/employer.model"
 import { TransferService } from '../services/transfer.service';
 import { Router } from '@angular/router';
 
@@ -43,6 +44,7 @@ export class AccountCreateComponent implements OnInit {
       twitter: '',
       skills: '',
       about: '',
+      website: '',
     });
     this.setValue()
   }

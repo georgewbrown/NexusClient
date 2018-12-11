@@ -6,6 +6,8 @@ import { PostsComponent } from './posts/posts.component';
 import { AuthComponent } from './auth/auth.component';
 import { ProfileComponent } from './profile/profile.component'
 import { AccountCreateComponent } from './account-create/account-create.component';
+import { AuthenticationGuard } from './guards/authentication.guard';
+import { BusniessProfileComponent } from './busniess-profile/busniess-profile.component';
 
 
 const routes: Routes = [
@@ -13,9 +15,9 @@ const routes: Routes = [
   {path: 'landing', component: LandingComponent },
   {path: 'posts', component: PostsComponent },
   {path: 'account', component: AuthComponent },
-  {path: 'profile', component: ProfileComponent },
+  {path: 'fprofile', component: ProfileComponent },
+  {path: 'bprofile', component: BusniessProfileComponent },
   {path: 'create', component: AccountCreateComponent },
-
 ]
 
 @NgModule({
