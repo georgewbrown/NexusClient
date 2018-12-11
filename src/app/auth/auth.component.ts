@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterLink } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
@@ -7,9 +7,10 @@ import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from "../services/authentication.service"
 import { EmployeeService } from "../services/employee.service";
 import { EmployerService } from "../services/employer.service"
-import { Employee } from "../models/employee"
+import { Employee } from "../models/employee.model"
 import { AccountCreateComponent } from '../account-create/account-create.component';
 import { MatDialog } from '@angular/material';
+import { ProfileComponent } from '../profile/profile.component';
 
 @Component({
     selector: 'auth-component',
@@ -31,7 +32,8 @@ export class AuthComponent implements OnInit {
         private employerService: EmployerService,
         private employeeService: EmployeeService,
         private alertService: AlertService,
-        public form: MatDialog,) {}
+        public form: MatDialog,
+        private router: Router,) {}
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
@@ -64,21 +66,25 @@ export class AuthComponent implements OnInit {
     handleUser() {
         if (this.name.includes("@")) {
             this.user = { email: this.name, password: this.password } 
-            console.log("email")
         } else {
             this.user = { name: this.name, password: this.password }
-            console.log("username")
         }
+    }
+
+    redirect() {
+        this.router.navigate(['/profile']);
+
     }
 
     onSubmit() {
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
-            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
+            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id)})
         } else {
             this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
-        }
-      
+        } 
+        this.redirect();
+
     }
 
     openForm(){

@@ -5,20 +5,32 @@
 }
 
 .Home{
-    margin-left: 82vw;
+    /* margin-top: -5em;
+    margin-left: -5em;
+    height: 10em;
+    width: 15em;
+    display: inline-block; */
+    text-decoration: none;
+    color: black;
 }
 
 .AboutUs{
-    margin-left: 82vw;
+    margin-left: 78vw;
     text-decoration: none;
+    color: black;
+
 }
 
 .Jobs{
     margin-left: 2vw;
     text-decoration: none;
+    color: black;
 }
 
 .Account{
     margin-left: 2vw;
     text-decoration: none;
+    color: black;
 }
+
+
