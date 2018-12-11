@@ -5,7 +5,7 @@
     text-align: center;
 }
 
-#inputBox{
+.inputBox{
   width: 45vw;
   height: 3vh;
   outline-style: solid;
@@ -13,7 +13,7 @@
   
 }
 
-#buttons{
+.buttons{
   text-align: center;
 }
 

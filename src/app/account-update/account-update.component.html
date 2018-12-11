@@ -1,0 +1,41 @@
+<h2 class="title" mat-dialog-title>SIGN UP FOR NEXUS</h2>
+<mat-dialog-content class="mat-typography">
+  <div class="signUpContainer">
+    <form [formGroup]="AccountCreateForm" (ngSubmit)="onSubmit()">
+      <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount" [ngModelOptions]="{standalone: true}">
+        <div>Please select a button (required):</div>
+        <br />
+        <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
+        <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
+      </mat-radio-group>
+      <label></label>
+      <input type="text" class="inputBox" placeholder="Username*" formControlName="name">
+      <label></label>
+      <input type="email" class="inputBox" placeholder="Email*" formControlName="email">
+      <label></label>
+      <input type="password" class="inputBox" placeholder="password*" formControlName="password">
+      <label></label>
+      <input type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilePicture">
+      <label></label>
+      <input type="text" class="inputBox" placeholder="Phone #" formControlName="phoneNumber">
+      <label></label>
+      <input type="text" class="inputBox" placeholder="Location" formControlName="location">
+      <label></label>
+      <input type="text" class="inputBox" placeholder="LinkedIn" formControlName="linkdin">
+      <label></label>
+      <input type="text" class="inputBox" placeholder="FaceBook" formControlName="faceBook">
+      <label></label>
+      <input type="text" class="inputBox" placeholder="Instagram" formControlName="instagram">
+      <label></label>
+      <input type="text" class="inputBox" placeholder="Twitter" formControlName="twitter">
+      <label></label>
+      <input type="options" class="inputBox" placeholder="Skills" formControlName="skills">
+      <label></label>
+      <textarea class="inputBox" placeholder="About You or Your Business" formControlName="about"></textarea>
+    </form>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button class="buttons" mat-button  type="button" mat-dialog-close>Cancel</button>
+  <button class="buttons" mat-button cdkFocusInitial mat-dialog-close (click)="onSubmit()">Update</button>
+</mat-dialog-actions>
