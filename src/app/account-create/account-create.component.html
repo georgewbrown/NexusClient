@@ -10,14 +10,14 @@
         </mat-radio-group>
       <div>
         <label></label>
-        <input type="text" id="inputBox" placeholder="Username*" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+        <input type="text" class="inputBox" placeholder="Username*" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
         <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
           <div *ngIf="f.name.errors.required">Username is required!</div>
         </div>
       </div>
       <div>
         <label></label>
-        <input type="email" id="inputBox" placeholder="Email*" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+        <input type="email" class="inputBox" placeholder="Email*" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
         <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
           <div *ngIf="f.email.errors.required">Email is required!</div>
           <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
@@ -25,51 +25,51 @@
       </div>
       <div>
         <label></label>
-        <input type="password" id="inputBox" placeholder="password*" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+        <input type="password" class="inputBox" placeholder="password*" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
         <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
           <div *ngIf="f.password.errors.required">Password is required!</div>
         </div>
       </div>
       <div>
         <label></label>
-        <input type="picture" id="inputBox" placeholder="Profile Picture" formControlName="profilepicture">
+        <input type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilepicture">
       </div>
       <div>
         <label></label>
-        <input type="text" id="inputBox" placeholder="Phone #" formControlName="phonenumber">
+        <input type="text" class="inputBox" placeholder="Phone #" formControlName="phonenumber">
       </div>
       <div>
         <label></label>
-        <input type="text" id="inputBox" placeholder="Location" formControlName="location">
+        <input type="text" class="inputBox" placeholder="Location" formControlName="location">
       </div>
       <div>
         <label></label>
-        <input type="text" id="inputBox" placeholder="LinkedIn" formControlName="linkdin">
+        <input type="text" class="inputBox" placeholder="LinkedIn" formControlName="linkdin">
       </div>
       <div>
         <label></label>
-        <input type="text" id="inputBox" placeholder="FaceBook" formControlName="facebook">
+        <input type="text" class="inputBox" placeholder="FaceBook" formControlName="facebook">
       </div>
       <div>
         <label></label>
-        <input type="text" id="inputBox" placeholder="Instagram" formControlName="instagram">
+        <input type="text" class="inputBox" placeholder="Instagram" formControlName="instagram">
       </div>
       <div>
         <label></label>
-        <input type="text" id="inputBox" placeholder="Twitter" formControlName="twitter">
+        <input type="text" class="inputBox" placeholder="Twitter" formControlName="twitter">
       </div>
       <div>
         <label></label>
-        <input type="options" id="inputBox" placeholder="Skills" formControlName="skills">
+        <input type="options" class="inputBox" placeholder="Skills" formControlName="skills">
       </div>
       <div>
         <label></label>
-        <textarea id="inputBox" placeholder="About You or Your Business" formControlName="about"></textarea>
+        <textarea class="inputBox" placeholder="About You or Your Business" formControlName="about"></textarea>
       </div>
     </form>
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button id="buttons" mat-button cdkFocusInitial type="button" mat-dialog-close>Cancel</button>
-  <button id="buttons" mat-button mat-dialog-close (click)="onSubmit()" [disabled]="!AccountCreateForm.valid || typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Sign Up</button>
+  <button class="buttons" mat-button cdkFocusInitial type="button" mat-dialog-close>Cancel</button>
+  <button class="buttons" mat-button mat-dialog-close (click)="onSubmit()" [disabled]="!AccountCreateForm.valid || typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Sign Up</button>
 </mat-dialog-actions>
