@@ -1,3 +1,7 @@
+@media (min-width: 320px) and (max-width: 1023px){
+    
+}
+
 .background{
     height: 100vh;
     width:100%;
@@ -20,7 +24,7 @@
 .authBox{
     width: 20vw;
     height: 50vh;
-    background-color: rgba(56, 186, 223, .2);
+    background-color: rgba(56, 186, 223, .1);
     margin-top: 22vh;
     margin-left: 38vw;
     font-family: 'Poppin', sans-serif;

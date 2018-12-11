@@ -1,3 +1,88 @@
+@media (min-width: 320px) and (max-width: 780px){
+    .landing {
+        background-image: url("../../assets/Nexus_Landing_Page_BKG.jpg");
+        background-size: 100vw ;
+        margin-top: .5em;
+        background-repeat: no-repeat;
+    }
+    
+    .button1{
+        width: 50vw;
+        height: 1.5em;
+        margin-top: 15vh;
+        margin-left: 25vw;
+        border-radius: 25em;
+        background-color: rgba(255, 255, 255, .7);
+        font-family: 'Poppins' sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    .button2{
+        width: 50vw;
+        height: 1.5em;
+        margin-top: 1.5vh;
+        margin-left: 25vw;
+        border-radius: 25em;
+        background-color: rgba(255, 255, 255, .7);
+        font-family: 'Poppins' sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    
+    /* .testimony {
+        height: 10vh;
+        width: 100vw;
+
+    } */
+    
+    /* .peyton{
+        margin-left: 20vh;
+        width: 25vw;
+        background-image: url('../../assets/peytonCEO.jpg');
+        background-repeat: no-repeat;
+        background-size: auto;
+    } */
+    
+    /* .quote{
+        margin-left: 20vh;
+        font-family: 'Poppins', sans-serif;
+        margin-top: 15vh;
+        font-display: bolder;
+    } */
+    
+    /* .aboutBreak{
+        background-image: url("../../assets/TeamLine.jpeg");
+        width: 100vw;
+        height: 40vh;
+        background-repeat: no-repeat;
+        background-position-y: 30%;
+        background-position-x: 90%;
+    } */
+    
+    .about {
+        margin-left: 10vw;
+        height: 25vh;
+        width: 80vw;
+        text-align: center;
+        align-content: center;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    .footer{
+        width: 100vw;
+        height: 3vh;
+        background-color: rgba(255, 255, 255, 1.0);
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+
+
+@media (min-width: 1024px){
+
 .NavBar{
     height: 3vh;
     background-color: rgba(255, 255, 255, 1.0);
@@ -103,223 +188,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-
-@media (min-width: 1920px) and (max-width: 2560px){
-    .NavBar{
-        height: 3vh;
-        background-color: rgba(255, 255, 255, 1.0);
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    .landing {
-        background-image: url("../../assets/Nexus_Landing_Page_BKG.jpg");
-        background-repeat: no-repeat;
-        height: 100vh;
-        width: 100vw;
-        margin-top: -.5em;
-    }
-    
-    .button1{
-        width: 20em;
-        height: 2.5em;
-        margin-top: 35em;
-        margin-left: 39em;
-        border-radius: 25px;
-        background-color: rgba(255, 255, 255, .7);
-        font-family: 'Poppins' sans-serif;
-        font-size: 15px;
-        font-weight: 500;
-    }
-    
-    .button2{
-        width: 20em;
-        height: 2.5em;
-        margin-top: 10em;
-        margin-left: 5em;
-        border-radius: 25px;
-        background-color: rgba(255, 255, 255, .7);
-        font-family: 'Poppins' sans-serif;
-        font-size: 15px;
-        font-weight: 500;
-    }
-    
-    
-    .testimony {
-        height: 20vh;
-        width: 100vw;
-    }
-    
-    .peyton{
-        margin-left: 20vh;
-        width: 25vw;
-        background-image: url('../../assets/peytonCEO.jpg');
-        background-repeat: no-repeat;
-        background-size: auto;
-    }
-    
-    .quote{
-        margin-left: 20vh;
-        font-family: 'Poppins', sans-serif;
-        margin-top: 15vh;
-        font-display: bolder;
-    }
-    
-    .aboutBreak{
-        background-image: url("../../assets/TeamLine.jpeg");
-        width: 100vw;
-        height: 40vh;
-        background-repeat: no-repeat;
-        background-position-y: 30%;
-        background-position-x: 90%;
-    }
-    
-    .about {
-        margin-left: 10vw;
-        height: 25vh;
-        width: 80vw;
-        text-align: center;
-        align-content: center;
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    .Home{
-        margin-left: 82vw;
-    
-    }
-    
-    .AboutUs{
-        margin-left: 82vw;
-        text-decoration: none;
-    }
-    
-    .Jobs{
-        margin-left: 2vw;
-        text-decoration: none;
-    }
-    
-    .Account{
-        margin-left: 2vw;
-        text-decoration: none;
-    }
-    
-    
-    .footer{
-        width: 100vw;
-        background-color: rgba(255, 255, 255, 1.0);
-        height: 1vh;
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-    }
 }
 
 
-
-
-@media (min-width: 320px) and (max-width: 1024px){
-    .NavBar{
-        height: 6vh;
-        width: 100vw;
-        background-color: rgba(255, 255, 255, 1.0);
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    .landing {
-        background-image: url("../../assets/Nexus_Landing_Page_BKG.jpg");
-        background-size: 100vw ;
-        margin-top: -.5em;
-        background-repeat: no-repeat;
-    }
-    
-    .button1{
-        width: 50vw;
-        height: 1.5em;
-        margin-top: 15vh;
-        margin-left: 25vw;
-        border-radius: 25em;
-        background-color: rgba(255, 255, 255, .7);
-        font-family: 'Poppins' sans-serif;
-        font-size: 15px;
-        font-weight: 500;
-    }
-    
-    .button2{
-        width: 50vw;
-        height: 1.5em;
-        margin-top: 1.5vh;
-        margin-left: 25vw;
-        border-radius: 25em;
-        background-color: rgba(255, 255, 255, .7);
-        font-family: 'Poppins' sans-serif;
-        font-size: 15px;
-        font-weight: 500;
-    }
-    
-    
-    .testimony {
-        height: 10vh;
-        width: 100vw;
-
-    }
-    
-    .peyton{
-        margin-left: 20vh;
-        width: 25vw;
-        background-image: url('../../assets/peytonCEO.jpg');
-        background-repeat: no-repeat;
-        background-size: auto;
-    }
-    
-    .quote{
-        margin-left: 20vh;
-        font-family: 'Poppins', sans-serif;
-        margin-top: 15vh;
-        font-display: bolder;
-    }
-    
-    .aboutBreak{
-        background-image: url("../../assets/TeamLine.jpeg");
-        width: 100vw;
-        height: 40vh;
-        background-repeat: no-repeat;
-        background-position-y: 30%;
-        background-position-x: 90%;
-    }
-    
-    .about {
-        margin-left: 10vw;
-        height: 25vh;
-        width: 80vw;
-        text-align: center;
-        align-content: center;
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    .Home{
-        margin-left: 82vw;
-    
-    }
-    
-    .AboutUs{
-        margin-left: 32vw;
-        text-decoration: none;
-    }
-    
-    .Jobs{
-        margin-left: 2vw;
-        text-decoration: none;
-    }
-    
-    .Account{
-        margin-left: 2vw;
-        text-decoration: none;
-    }
-    
-    
-    .footer{
-        width: 100vw;
-        background-color: rgba(255, 255, 255, 1.0);
-        height: 1vh;
-        text-align: center;
-        font-family: 'Poppins', sans-serif;
-    }
-}

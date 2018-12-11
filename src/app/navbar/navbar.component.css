@@ -1,3 +1,41 @@
+@media (min-width: 320px) and (max-width: 1023px){
+
+    .NavBar{
+        height: 3.5vh;
+        width: 100vw;
+        background-color: rgba(255, 255, 255, 1.0);
+        font-family: 'Poppins', sans-serif;
+    }
+    
+    .Home{
+        margin-left: -.5em;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .AboutUs{
+        padding-left: 1.5em;
+        text-decoration: none;
+        color: black;
+    
+    }
+    
+    .Jobs{
+        padding-left: 1.5em;
+        text-decoration: none;
+        color: black;
+    }
+    
+    .Account{
+        padding-left: 1.5em;
+        text-decoration: none;
+        color: black;
+
+}
+
+}
+
+@media (min-width: 1024px){
 .NavBar{
     height: 3vh;
     background-color: rgba(255, 255, 255, 1.0);
@@ -33,4 +71,4 @@
     color: black;
 }
 
-
+}
