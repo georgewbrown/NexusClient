@@ -27,6 +27,13 @@ mat-card{
     
 }
 
+.phone{
+    background-image: url('../../assets/telephone.svg');
+    background-size: 65%;
+    position: relative;
+    background-repeat: no-repeat;
+}
+
 #left-column{
     float: left;
     width: 30%;
