@@ -32,11 +32,11 @@
       </div>
       <div>
         <label></label>
-        <input type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilepicture">
+        <input type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilePicture">
       </div>
       <div>
         <label></label>
-        <input type="text" class="inputBox" placeholder="Phone #" formControlName="phonenumber">
+        <input type="text" class="inputBox" placeholder="Phone #" formControlName="phoneNumber">
       </div>
       <div>
         <label></label>
@@ -48,7 +48,7 @@
       </div>
       <div>
         <label></label>
-        <input type="text" class="inputBox" placeholder="FaceBook" formControlName="facebook">
+        <input type="text" class="inputBox" placeholder="FaceBook" formControlName="faceBook">
       </div>
       <div>
         <label></label>
@@ -70,6 +70,6 @@
   </div>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button id="buttons" mat-button cdkFocusInitial type="button" mat-dialog-close>Cancel</button>
-  <button id="buttons" mat-button mat-dialog-close (click)="onSubmit()" [disabled]="!AccountCreateForm.valid || typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Sign Up</button>
+  <button class="buttons" mat-button cdkFocusInitial type="button" mat-dialog-close>Cancel</button>
+  <button class="buttons" mat-button mat-dialog-close (click)="onSubmit()" [disabled]="!AccountCreateForm.valid || typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Sign Up</button>
 </mat-dialog-actions>

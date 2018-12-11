@@ -17,12 +17,13 @@ import { AuthenticationService } from "./services/authentication.service";
 import { AlertService } from "./services/alert.service";
 import { EmployeeService } from "./services/employee.service";
 import { AccountCreateComponent } from './account-create/account-create.component';
-import { EmployerCreateComponent } from './employer-create/employer-create.component'
+import { AccountUpdateComponent } from './account-update/account-update.component'
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { EmployerService } from "./services/employer.service";
 import { JwtInterceptor } from "./helpers/jwt.interceptor";
 import { ErrorInterceptor } from "./helpers/error.interceptor";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { TransferService } from "./services/transfer.service"
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     NavbarComponent,
     AlertComponent,
     AccountCreateComponent,
-    EmployerCreateComponent,
+    AccountUpdateComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,8 +48,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ReactiveFormsModule,
     AngularFontAwesomeModule
   ],
-  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, TransferService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents:[AccountUpdateComponent]
 })
 export class AppModule { }

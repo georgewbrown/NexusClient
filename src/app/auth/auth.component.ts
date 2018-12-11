@@ -7,7 +7,7 @@ import { AlertService } from '../services/alert.service';
 import { AuthenticationService } from "../services/authentication.service"
 import { EmployeeService } from "../services/employee.service";
 import { EmployerService } from "../services/employer.service"
-import { Employee } from "../models/employee"
+import { Employee } from "../models/employee.model"
 import { AccountCreateComponent } from '../account-create/account-create.component';
 import { MatDialog } from '@angular/material';
 import { ProfileComponent } from '../profile/profile.component';
@@ -66,10 +66,8 @@ export class AuthComponent implements OnInit {
     handleUser() {
         if (this.name.includes("@")) {
             this.user = { email: this.name, password: this.password } 
-            console.log("email")
         } else {
             this.user = { name: this.name, password: this.password }
-            console.log("username")
         }
     }
 
@@ -81,7 +79,7 @@ export class AuthComponent implements OnInit {
     onSubmit() {
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
-            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
+            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id)})
         } else {
             this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
         } 
