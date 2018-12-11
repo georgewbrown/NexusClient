@@ -23,7 +23,8 @@ import { EmployerService } from "./services/employer.service";
 import { JwtInterceptor } from "./helpers/jwt.interceptor";
 import { ErrorInterceptor } from "./helpers/error.interceptor";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
-import { TransferService } from "./services/transfer.service"
+import { TransferService } from "./services/transfer.service";
+import { BusniessProfileComponent } from './busniess-profile/busniess-profile.component'
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { TransferService } from "./services/transfer.service"
     AlertComponent,
     AccountCreateComponent,
     AccountUpdateComponent,
+    BusniessProfileComponent,
   ],
   imports: [
     BrowserModule,

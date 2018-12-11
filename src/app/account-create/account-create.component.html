@@ -1,75 +1,77 @@
 <h2 class="title" mat-dialog-title>SIGN UP FOR NEXUS</h2>
-<mat-dialog-content class="mat-typography">
-  <div class="signUpContainer">
-    <form [formGroup]="AccountCreateForm" (ngSubmit)="onSubmit()">
-        <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount" [ngModelOptions]="{standalone: true}">
-          <div>Please select a button (required):</div>
-          <br />
-          <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
-          <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
-        </mat-radio-group>
-      <div>
-        <label></label>
-        <input type="text" class="inputBox" placeholder="Username*" formControlName="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
-        <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-          <div *ngIf="f.name.errors.required">Username is required!</div>
+<form [formGroup]="AccountCreateForm" (ngSubmit)="submit(AccountCreateForm)">
+  <mat-dialog-content class="mat-typography">
+    <div class="signUpContainer">
+      <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount" [ngModelOptions]="{standalone: true}">
+        <div>Please select a button (required):</div>
+        <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
+        <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
+      </mat-radio-group>
+      <div *ngIf="typeOfAccount === 'freelance' ">
+        <mat-form-field>
+          <input matInput class="inputBox" placeholder="Username" formControlName="name">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="password" class="inputBox" placeholder="password" formControlName="password">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilePicture">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" class="inputBox" placeholder="Phone #" formControlName="phoneNumber">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" class="inputBox" placeholder="Location" formControlName="location">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" class="inputBox" placeholder="LinkedIn" formControlName="linkdin">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" class="inputBox" placeholder="FaceBook" formControlName="faceBook">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" class="inputBox" placeholder="Instagram" formControlName="instagram">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="text" class="inputBox" placeholder="Twitter" formControlName="twitter">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput type="options" class="inputBox" placeholder="Skills" formControlName="skills">
+        </mat-form-field>
+        <mat-form-field>
+          <textarea matInput class="inputBox" placeholder="About You or Your Business" formControlName="about"></textarea>
+        </mat-form-field>
+      </div>
+      <div *ngIf="typeOfAccount === 'business' ">
+          <mat-form-field>
+            <input matInput class="inputBox" placeholder="name" formControlName="name">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="password" class="inputBox" placeholder="password" formControlName="password">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" class="inputBox" placeholder="Phone #" formControlName="phoneNumber">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" class="inputBox" placeholder="Location" formControlName="location">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="text" class="inputBox" placeholder="Website" formControlName="website">
+          </mat-form-field>
+          <mat-form-field>
+            <textarea matInput class="inputBox" placeholder="About You or Your Business" formControlName="about"></textarea>
+          </mat-form-field>
         </div>
-      </div>
-      <div>
-        <label></label>
-        <input type="email" class="inputBox" placeholder="Email*" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
-        <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-          <div *ngIf="f.email.errors.required">Email is required!</div>
-          <div *ngIf="f.email.errors.email">Email must be a valid email address</div>
-        </div>
-      </div>
-      <div>
-        <label></label>
-        <input type="password" class="inputBox" placeholder="Password*" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
-        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-          <div *ngIf="f.password.errors.required">Password is required!</div>
-        </div>
-      </div>
-      <div>
-        <label></label>
-        <input type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilePicture">
-      </div>
-      <div>
-        <label></label>
-        <input type="text" class="inputBox" placeholder="Phone #" formControlName="phoneNumber">
-      </div>
-      <div>
-        <label></label>
-        <input type="text" class="inputBox" placeholder="Location" formControlName="location">
-      </div>
-      <div>
-        <label></label>
-        <input type="text" class="inputBox" placeholder="LinkedIn" formControlName="linkdin">
-      </div>
-      <div>
-        <label></label>
-        <input type="text" class="inputBox" placeholder="FaceBook" formControlName="faceBook">
-      </div>
-      <div>
-        <label></label>
-        <input type="text" class="inputBox" placeholder="Instagram" formControlName="instagram">
-      </div>
-      <div>
-        <label></label>
-        <input type="text" class="inputBox" placeholder="Twitter" formControlName="twitter">
-      </div>
-      <div>
-        <label></label>
-        <input type="options" class="inputBox" placeholder="Skills" formControlName="skills">
-      </div>
-      <div>
-        <label></label>
-        <textarea class="inputBox" placeholder="About You or Your Business" formControlName="about"></textarea>
-      </div>
-    </form>
-  </div>
-</mat-dialog-content>
-<mat-dialog-actions>
-  <button class="buttons" mat-button cdkFocusInitial type="button" mat-dialog-close>Cancel</button>
-  <button class="buttons" mat-button mat-dialog-close (click)="onSubmit()" [disabled]="!AccountCreateForm.valid || typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Sign Up</button>
-</mat-dialog-actions>
+    </div>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="buttons" mat-button type="button" mat-dialog-close>Cancel</button>
+    <button class="buttons" mat-button cdkFocusInitial type="submit">Sign Up</button>
+  </mat-dialog-actions>
+</form>
