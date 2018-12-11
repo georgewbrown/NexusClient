@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { EmployeeService } from "../services/employee.service"
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { AccountUpdateComponent } from "../account-update/account-update.component"
 import { Employee } from '../models/employee.model';
+import { PostsService } from '../services/posts.service';
 
 @Component({
   selector: 'app-profile',
@@ -12,25 +13,36 @@ import { Employee } from '../models/employee.model';
 
 export class ProfileComponent implements OnInit {
   profile
+  dialogReturn: MatDialogRef<AccountUpdateComponent>
+  posts
 
-  constructor(private employeeService: EmployeeService, public form: MatDialog) { }
+  constructor(
+    private employeeService: EmployeeService,
+    public form: MatDialog,
+    private postsService: PostsService
+    ) { }
 
   ngOnInit() {
+    this.getAccount()
+    // this.getPosts()
+  }
+
+  getAccount() {
     this.employeeService.get(sessionStorage.getItem("id")).subscribe(res => this.profile = res)
   }
 
-  update() {
-    // this.employeeService.update( ,sessionStorage.getItem("id"))
-  }
-
-  openForm(){
-    const formRef = this.form.open(AccountUpdateComponent, {
+  openForm() {
+    this.dialogReturn = this.form.open(AccountUpdateComponent, {
       data: {
         account: this.profile
       }
     });
 
-    formRef.afterClosed().subscribe(res => console.log(res))
+    this.dialogReturn.afterClosed().subscribe(res => { this.employeeService.update(res, sessionStorage.getItem("id")).subscribe(res => this.getAccount()) })
   }
+
+  // getPosts() {
+  //   this.postsService.getPosts().subscribe((res: any) => { this.posts = res.post, console.log(res.post) })
+  // }
 
 }

@@ -35,7 +35,7 @@ export class AuthComponent implements OnInit {
         private alertService: AlertService,
         public form: MatDialog,
         private router: Router,
-        private transferService: TransferService
+        public transferService: TransferService
         ) {}
 
     ngOnInit() {
@@ -82,7 +82,7 @@ export class AuthComponent implements OnInit {
     onSubmit() {
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
-            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.transferService.setData(this.typeOfAccount), this.redirect()})
+            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect()})
         } else {
             this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
         } 
