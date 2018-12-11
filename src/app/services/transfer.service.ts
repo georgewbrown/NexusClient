@@ -20,8 +20,4 @@ export class TransferService {
     return this.data;
   }
 
-  clearData(){
-    this.data = undefined;
-  }
-
 }

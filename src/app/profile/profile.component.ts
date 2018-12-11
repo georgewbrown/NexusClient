@@ -30,7 +30,7 @@ export class ProfileComponent implements OnInit {
       }
     });
 
-    formRef.afterClosed()
+    formRef.afterClosed().subscribe(res => console.log(res))
   }
 
 }
