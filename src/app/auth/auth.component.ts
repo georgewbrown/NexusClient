@@ -11,6 +11,7 @@ import { Employee } from "../models/employee.model"
 import { AccountCreateComponent } from '../account-create/account-create.component';
 import { MatDialog } from '@angular/material';
 import { ProfileComponent } from '../profile/profile.component';
+import { TransferService } from '../services/transfer.service';
 
 @Component({
     selector: 'auth-component',
@@ -33,7 +34,9 @@ export class AuthComponent implements OnInit {
         private employeeService: EmployeeService,
         private alertService: AlertService,
         public form: MatDialog,
-        private router: Router,) {}
+        private router: Router,
+        private transferService: TransferService
+        ) {}
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
@@ -79,7 +82,7 @@ export class AuthComponent implements OnInit {
     onSubmit() {
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
-            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id)})
+            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.transferService.setData(this.typeOfAccount)})
         } else {
             this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
         } 

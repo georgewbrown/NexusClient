@@ -30,6 +30,6 @@ export class EmployeeService {
   }
 
   update(employee: object, id: string): Observable<Employee> {
-    return this.http.put<Employee>(`https://nexuserver.herokuapp.com/employee/update/${id}`, httpOptions, employee)
+    return this.http.put<Employee>(`https://nexuserver.herokuapp.com/employee/update/${id}`, employee, httpOptions)
   }
 }
