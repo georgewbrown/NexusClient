@@ -1,7 +1,7 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { TransferService } from '../services/transfer.service';
-import { MAT_DIALOG_DATA } from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { EmployeeService } from '../services/employee.service';
 import { EmployerService } from '../services/employer.service';
 
@@ -16,17 +16,18 @@ export class AccountUpdateComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private transferService: TransferService,
+    public transferService: TransferService,
     private employeeService: EmployeeService,
     private employerService: EmployerService,
+    private matDialogRef: MatDialogRef<AccountUpdateComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.AccountUpdateForm = this.formBuilder.group({
       name: this.data.account.name,
       email: this.data.account.email,
-      password: "",
+      password: this.data.account.password,
       profilePicture: this.data.account.profilePicture,
       phoneNumber: this.data.account.phoneNumber,
       location: this.data.account.location,
@@ -39,12 +40,9 @@ export class AccountUpdateComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    if (this.transferService.getData() === "freelance") {
-      console.log("here")
-      this.employeeService.update(this.AccountUpdateForm.value, sessionStorage.getItem("id")).subscribe(res => console.log(res))
-    } else {
-      
+  submit(AccountUpdateForm) {
+      this.matDialogRef.close(AccountUpdateForm.value)
+
     }
   }
 

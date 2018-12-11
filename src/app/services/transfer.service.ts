@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: "root"
 })
 export class TransferService {
+  data: string;
 
   constructor() { }
 
-  private data;
+  
 
   setData(data){
     this.data = data;

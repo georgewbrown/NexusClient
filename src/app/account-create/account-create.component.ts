@@ -4,6 +4,7 @@ import { EmployerService } from "../services/employer.service";
 import { EmployeeService } from "../services/employee.service";
 import { Employee } from '../models/employee.model';
 import { TransferService } from '../services/transfer.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -18,10 +19,12 @@ export class AccountCreateComponent implements OnInit {
   employee: object
 
   constructor(
-    private formBuilder: FormBuilder, 
-    private employeeService: EmployeeService, 
+    private formBuilder: FormBuilder,
+    private employeeService: EmployeeService,
     private employerService: EmployerService,
-    private transferService: TransferService) { }
+    public transferService: TransferService,
+    private router: Router
+    ) { }
 
 
 
@@ -53,6 +56,10 @@ export class AccountCreateComponent implements OnInit {
     this.typeOfAccount = event.value
   }
 
+  redirect() {
+    this.router.navigate(['/profile'])
+}
+
   saveEmployee() {
     return new Employee().deserialize(this.AccountCreateForm.value)
   }
@@ -62,7 +69,7 @@ export class AccountCreateComponent implements OnInit {
 
     if (this.typeOfAccount === "freelance") {
       this.employee = this.saveEmployee()
-      this.employeeService.register(this.employee).subscribe(res => this.transferService.setData(this.employee))
+      this.employeeService.register(this.employee).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
     }
 
   }
