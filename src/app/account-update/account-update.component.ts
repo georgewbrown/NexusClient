@@ -44,7 +44,7 @@ export class AccountUpdateComponent implements OnInit {
       console.log("here")
       this.employeeService.update(this.AccountUpdateForm.value, sessionStorage.getItem("id")).subscribe(res => console.log(res))
     } else {
-
+      
     }
   }
 

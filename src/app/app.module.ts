@@ -48,7 +48,7 @@ import { TransferService } from "./services/transfer.service"
     ReactiveFormsModule,
     AngularFontAwesomeModule
   ],
-  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, TransferService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },],
   bootstrap: [AppComponent],
   entryComponents:[AccountUpdateComponent]
