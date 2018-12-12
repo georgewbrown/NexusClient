@@ -4,6 +4,7 @@
       <a class="AboutUs" href="http://localhost:4200/landing#aboutSect">ABOUT US</a>
       <a class="Jobs" routerLink="/posts">JOBS</a>
       <a class="Account" (click)="handleAccount()">ACCOUNT</a>
+      <button (click)="logout()" *ngIf="isLoggedIn">Logout</button>
     </ul>
     
   </nav>
