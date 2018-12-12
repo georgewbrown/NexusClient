@@ -9,7 +9,7 @@ import { EmployeeService } from "../services/employee.service";
 import { EmployerService } from "../services/employer.service"
 import { Employee } from "../models/employee.model"
 import { AccountCreateComponent } from '../account-create/account-create.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { ProfileComponent } from '../profile/profile.component';
 import { TransferService } from '../services/transfer.service';
 
@@ -25,6 +25,7 @@ export class AuthComponent implements OnInit {
     password: string;
     typeOfAccount: string;
     user;
+    dialogReturn: MatDialogRef<AccountCreateComponent>
 
 
     constructor(
@@ -89,10 +90,18 @@ export class AuthComponent implements OnInit {
 
     }
 
+    userRegister(user) {
+        if (sessionStorage.getItem("account") === "freelance") {
+            this.employeeService.register(user).subscribe(res => console.log(res))
+        } else {
+            this.employerService.register(user).subscribe(res => console.log(res))
+        }
+    }
+
     openForm(){
-        const formRef = this.form.open(AccountCreateComponent);
+        this.dialogReturn = this.form.open(AccountCreateComponent);
     
-        formRef.afterClosed()
+        this.dialogReturn.afterClosed().subscribe(res => { console.log(res), this.userRegister(res) })
       }
 
 }
