@@ -9,7 +9,7 @@ import { EmployeeService } from "../services/employee.service";
 import { EmployerService } from "../services/employer.service"
 import { Employee } from "../models/employee.model"
 import { AccountCreateComponent } from '../account-create/account-create.component';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef } from '@angular/material';
 import { ProfileComponent } from '../profile/profile.component';
 import { TransferService } from '../services/transfer.service';
 
@@ -25,6 +25,7 @@ export class AuthComponent implements OnInit {
     password: string;
     typeOfAccount: string;
     user;
+    dialogReturn: MatDialogRef<AccountCreateComponent>
 
 
     constructor(
@@ -36,14 +37,14 @@ export class AuthComponent implements OnInit {
         public form: MatDialog,
         private router: Router,
         public transferService: TransferService
-        ) {}
+    ) { }
 
     ngOnInit() {
         this.loginForm = this.formBuilder.group({
             name: [this.name, Validators.required],
             password: [this.password, Validators.required]
         });
-        
+
         // reset login status
         // this.authenticationService.logout();
 
@@ -68,31 +69,44 @@ export class AuthComponent implements OnInit {
 
     handleUser() {
         if (this.name.includes("@")) {
-            this.user = { email: this.name, password: this.password } 
+            this.user = { email: this.name, password: this.password }
         } else {
             this.user = { name: this.name, password: this.password }
         }
     }
 
     redirect() {
-        this.router.navigate(['/profile']);
+        if (sessionStorage.getItem("account") === "freelance") {
+            this.router.navigate(["/fprofile"])
+        } else {
+            this.router.navigate(["/bprofile"])
+        }
+
 
     }
 
     onSubmit() {
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
-            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect()})
+            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
         } else {
-            this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken)})
-        } 
+            this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken) })
+        }
 
     }
 
-    openForm(){
-        const formRef = this.form.open(AccountCreateComponent);
-    
-        formRef.afterClosed()
-      }
+    userRegister(user) {
+        if (sessionStorage.getItem("account") === "freelance") {
+            this.employeeService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.redirect() })
+        } else {
+            this.employerService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.redirect() })
+        }
+    }
+
+    openForm() {
+        this.dialogReturn = this.form.open(AccountCreateComponent);
+
+        this.dialogReturn.afterClosed().subscribe(res => { console.log(res), this.userRegister(res) })
+    }
 
 }

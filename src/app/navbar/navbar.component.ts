@@ -8,10 +8,16 @@ import { Router } from '@angular/router';
 })
 
 export class NavbarComponent implements OnInit {
+  isLoggedIn = sessionStorage.getItem("account")
 
   constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    sessionStorage.clear()
+    this.handleAccount()
   }
 
   handleAccount() {
