@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Employer } from "../models/employer.model";
 import { Observable } from "rxjs"
 
 
@@ -7,11 +8,11 @@ import { Observable } from "rxjs"
 export class EmployerService {
   constructor(private http: HttpClient) { }
 
-  register(employer: object): Observable<any> {
-    return this.http.post("https://nexuserver.herokuapp.com/busniess/signup", employer)
+  register(employer: object): Observable<Employer> {
+    return this.http.post<Employer>("https://nexuserver.herokuapp.com/business/signup", employer)
   }
 
-  login(employer: object): Observable<any> {
-    return this.http.post("https://nexuserver.herokuapp.com/busniess/signin", employer)
+  login(employer: object): Observable<Employer> {
+    return this.http.post<Employer>("https://nexuserver.herokuapp.com/business/signin", employer)
   }
 }

@@ -10,26 +10,29 @@
       <mat-form-field>
         <input matInput class="inputBox" placeholder="Username" formControlName="username" [errorStateMatcher]="matcher"
           required>
-          <mat-error *ngIf="fc().username.hasError('required')">Username is <strong>required</strong></mat-error>
+        <mat-error *ngIf="fc().username.hasError('required')">Username is <strong>required</strong></mat-error>
       </mat-form-field>
       <mat-form-field>
-          <input matInput class="inputBox" placeholder="Full Name" formControlName="name" [errorStateMatcher]="matcher"
-            required>
-            <mat-error *ngIf="fc().name.hasError('required')">Full Name is <strong>required</strong></mat-error>
-        </mat-form-field>
+        <input matInput class="inputBox" placeholder="Full Name" formControlName="name" [errorStateMatcher]="matcher"
+          required>
+        <mat-error *ngIf="fc().name.hasError('required')">Full Name is <strong>required</strong></mat-error>
+      </mat-form-field>
       <mat-form-field>
         <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email" [errorStateMatcher]="matcher"
           required>
         <mat-hint>Must be valid email</mat-hint>
         <mat-error *ngIf="fc().email.hasError('required') && !fc().email.hasError('email')">Email is <strong>required</strong></mat-error>
-        <mat-error *ngIf="fc().email.hasError('email') && !fc().email.hasError('required')" >Please enter a valid email address</mat-error>
+        <mat-error *ngIf="fc().email.hasError('email') && !fc().email.hasError('required')">Please enter a valid email
+          address</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput type="password" class="inputBox" placeholder="Password" formControlName="password"
           [errorStateMatcher]="matcher" required>
         <mat-hint>Minimum of 6 characters</mat-hint>
-        <mat-error *ngIf="fc().password.hasError('required') && !fc().password.hasError('minlength')">Password is <strong>required</strong></mat-error>
-        <mat-error *ngIf="fc().password.hasError('minlength') && !fc().password.hasError('required')" >Minimum of 6 characters</mat-error>
+        <mat-error *ngIf="fc().password.hasError('required') && !fc().password.hasError('minlength')">Password is
+          <strong>required</strong></mat-error>
+        <mat-error *ngIf="fc().password.hasError('minlength') && !fc().password.hasError('required')">Minimum of 6
+          characters</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilePicture">
@@ -67,24 +70,35 @@
     <button class="buttons" mat-button cdkFocusInitial type="submit">Sign Up</button>
   </mat-dialog-actions>
 </form>
-<form [formGroup]="BusinessCreateForm" *ngIf="typeOfAccount === 'business' " (ngSubmit)="submit(BusniessCreateForm)">
+<form [formGroup]="BusinessCreateForm" *ngIf="typeOfAccount === 'business' " (ngSubmit)="submit(BusinessCreateForm)">
   <mat-dialog-content class="mat-typography">
     <div class="signUpContainer">
       <mat-form-field>
-        <input matInput class="inputBox" placeholder="Business Name" formControlName="name" [errorStateMatcher]="matcher" required>
+        <input matInput class="inputBox" placeholder="Username" formControlName="username" [errorStateMatcher]="matcher"
+          required>
+        <mat-error *ngIf="bc().username.hasError('required')">Username is <strong>required</strong></mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput class="inputBox" placeholder="Business Name" formControlName="name" [errorStateMatcher]="matcher"
+          required>
         <mat-error *ngIf="bc().name.hasError('required')">Business Name is <strong>required</strong></mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email" [errorStateMatcher]="matcher" required>
+        <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email" [errorStateMatcher]="matcher"
+          required>
         <mat-hint>Must be valid email</mat-hint>
         <mat-error *ngIf="bc().email.hasError('required') && !bc().email.hasError('email')">Email is <strong>required</strong></mat-error>
-        <mat-error *ngIf="bc().email.hasError('email') && !bc().email.hasError('required')" >Please enter a valid email address</mat-error>
+        <mat-error *ngIf="bc().email.hasError('email') && !bc().email.hasError('required')">Please enter a valid email
+          address</mat-error>
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" class="inputBox" placeholder="Password" formControlName="password" [errorStateMatcher]="matcher" required>
+        <input matInput type="password" class="inputBox" placeholder="Password" formControlName="password"
+          [errorStateMatcher]="matcher" required>
         <mat-hint>Minimum of 6 characters</mat-hint>
-        <mat-error *ngIf="bc().password.hasError('required') && !bc().password.hasError('minlength')">Password is <strong>required</strong></mat-error>
-        <mat-error *ngIf="bc().password.hasError('minlength') && !bc().password.hasError('required')" >Minimum of 6 characters</mat-error>
+        <mat-error *ngIf="bc().password.hasError('required') && !bc().password.hasError('minlength')">Password is
+          <strong>required</strong></mat-error>
+        <mat-error *ngIf="bc().password.hasError('minlength') && !bc().password.hasError('required')">Minimum of 6
+          characters</mat-error>
       </mat-form-field>
       <mat-form-field>
         <input matInput type="text" class="inputBox" placeholder="Phone Number" formControlName="phoneNumber">
@@ -96,7 +110,8 @@
         <input matInput type="text" class="inputBox" placeholder="Website" formControlName="website">
       </mat-form-field>
       <mat-form-field>
-        <textarea matInput class="inputBox" placeholder="About Your Business" formControlName="about" cdkTextareaAutosize></textarea>
+        <textarea matInput class="inputBox" placeholder="About Your Business" formControlName="about"
+          cdkTextareaAutosize></textarea>
       </mat-form-field>
     </div>
   </mat-dialog-content>

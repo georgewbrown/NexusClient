@@ -52,6 +52,7 @@ export class AccountCreateComponent implements OnInit {
     });
 
     this.BusinessCreateForm = this.formBuilder.group({
+      username: new FormControl("", Validators.required),
       name: new FormControl("", Validators.required),
       email: new FormControl("", [Validators.required, Validators.email]),
       password: new FormControl("", [Validators.required, Validators.minLength(6)]),

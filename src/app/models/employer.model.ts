@@ -1,10 +1,15 @@
 export class Employer {
-    id: number;
-    name: string;
-    password: string;
-    email: string;
-    phoneNumber: number;
-    location: string;
-    website: string;
-    about: string;
+    business: {
+        id: string;
+        username: string;
+        name: string;
+        password: string;
+        email: string;
+        phoneNumber: number;
+        profilePicture: string;
+        location: string;
+        website: string;
+        about: string;
+    }
+    sessionToken: string
 }
