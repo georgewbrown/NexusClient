@@ -45,5 +45,3 @@ export class AccountUpdateComponent implements OnInit {
 
     }
   }
-
-}
