@@ -24,7 +24,8 @@ import { JwtInterceptor } from "./helpers/jwt.interceptor";
 import { ErrorInterceptor } from "./helpers/error.interceptor";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TransferService } from "./services/transfer.service";
-import { BusniessProfileComponent } from './busniess-profile/busniess-profile.component'
+import { BusniessProfileComponent } from './busniess-profile/busniess-profile.component';
+import { JobPostComponent } from './job-post/job-post.component'
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { BusniessProfileComponent } from './busniess-profile/busniess-profile.co
     AccountCreateComponent,
     AccountUpdateComponent,
     BusniessProfileComponent,
+    JobPostComponent,
   ],
   imports: [
     BrowserModule,

@@ -127,19 +127,12 @@
     width: 100vw;
 }
 
-.peyton{
-    margin-left: 20vh;
-    width: 25vw;
-    background-image: url('../../assets/peytonCEO.jpg');
-    background-repeat: no-repeat;
-    background-size: auto;
-}
-
 .quote{
-    margin-left: 20vh;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     margin-top: 15vh;
     font-display: bolder;
+    font-size: 2em;
 }
 
 .aboutBreak{
@@ -187,6 +180,7 @@
     height: 1vh;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 }
