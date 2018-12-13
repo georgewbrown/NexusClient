@@ -8,6 +8,7 @@ import { ProfileComponent } from './profile/profile.component'
 import { AccountCreateComponent } from './account-create/account-create.component';
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { BusinessProfileComponent } from './business-profile/business-profile.component';
+import { JobPostComponent } from './job-post/job-post.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   {path: 'fprofile', component: ProfileComponent },
   {path: 'bprofile', component: BusinessProfileComponent },
   {path: 'create', component: AccountCreateComponent },
+  {path: 'jobposts', component: JobPostComponent },
 ]
 
 @NgModule({
