@@ -7,12 +7,12 @@ import { PostsService } from '../services/posts.service';
 import { EmployerService } from '../services/employer.service';
 
 @Component({
-  selector: 'app-busniess-profile',
-  templateUrl: './busniess-profile.component.html',
-  styleUrls: ['./busniess-profile.component.css']
+  selector: 'app-business-profile',
+  templateUrl: './business-profile.component.html',
+  styleUrls: ['./business-profile.component.css']
 })
 
-export class BusniessProfileComponent implements OnInit {
+export class BusinessProfileComponent implements OnInit {
   profile
   dialogReturn: MatDialogRef<AccountUpdateComponent>
   posts
@@ -21,15 +21,15 @@ export class BusniessProfileComponent implements OnInit {
     private employerService: EmployerService,
     public form: MatDialog,
     private postsService: PostsService
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.getAccount()
-    // this.getPosts()
+    this.getPosts()
   }
 
   getAccount() {
-    // this.employerService.get(sessionStorage.getItem("id")).subscribe(res => this.profile = res)
+    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => this.profile = res)
   }
 
   openForm() {
@@ -42,8 +42,8 @@ export class BusniessProfileComponent implements OnInit {
     // this.dialogReturn.afterClosed().subscribe(res => { this.employerService.update(res, sessionStorage.getItem("id")).subscribe(res => this.getAccount()) })
   }
 
-  // getPosts() {
-  //   this.postsService.getPosts().subscribe((res: any) => { this.posts = res.post, console.log(res.post) })
-  // }
+  getPosts() {
+    this.postsService.getPostsByID(sessionStorage.getItem("id")).subscribe((res: any) => { this.posts = res, console.log(res) })
+  }
 
 }

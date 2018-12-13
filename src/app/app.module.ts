@@ -17,14 +17,14 @@ import { AuthenticationService } from "./services/authentication.service";
 import { AlertService } from "./services/alert.service";
 import { EmployeeService } from "./services/employee.service";
 import { AccountCreateComponent } from './account-create/account-create.component';
-import { AccountUpdateComponent } from './account-update/account-update.component'
+import { AccountUpdateComponent } from './account-update/account-update.component';
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { EmployerService } from "./services/employer.service";
 import { JwtInterceptor } from "./helpers/jwt.interceptor";
 import { ErrorInterceptor } from "./helpers/error.interceptor";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TransferService } from "./services/transfer.service";
-import { BusniessProfileComponent } from './busniess-profile/busniess-profile.component'
+import { BusinessProfileComponent } from './busniess-profile/business-profile.component'
 
 @NgModule({
   declarations: [
@@ -37,7 +37,7 @@ import { BusniessProfileComponent } from './busniess-profile/busniess-profile.co
     AlertComponent,
     AccountCreateComponent,
     AccountUpdateComponent,
-    BusniessProfileComponent,
+    BusinessProfileComponent,
   ],
   imports: [
     BrowserModule,
