@@ -17,7 +17,7 @@ import { AuthenticationService } from "./services/authentication.service";
 import { AlertService } from "./services/alert.service";
 import { EmployeeService } from "./services/employee.service";
 import { AccountCreateComponent } from './account-create/account-create.component';
-import { AccountUpdateComponent } from './account-update/account-update.component'
+import { AccountUpdateComponent } from './account-update/account-update.component';
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { EmployerService } from "./services/employer.service";
 import { JwtInterceptor } from "./helpers/jwt.interceptor";

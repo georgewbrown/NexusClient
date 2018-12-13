@@ -23,7 +23,7 @@ export class NavbarComponent implements OnInit {
   handleAccount() {
     if (sessionStorage.getItem("account") === "freelance") {
       this.router.navigate(["/fprofile"])
-    } else if (sessionStorage.getItem("account") === "busniess") {
+    } else if (sessionStorage.getItem("account") === "business") {
       this.router.navigate(["/bprofile"])
     } else {
       this.router.navigate(["/account"])
