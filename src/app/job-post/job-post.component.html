@@ -1,10 +1,15 @@
-<div *ngFor="let post of posts" id="card">
-      <mat-card-title>{{ post.jobTitle }}</mat-card-title>
-      <mat-card-subtitle> {{ post.name }} </mat-card-subtitle>
-      <mat-card-subtitle> {{ post.payRange }} </mat-card-subtitle>
-      <mat-card-subtitle> {{ post.location }} </mat-card-subtitle>
-      <mat-card-content> {{ post.skills }} </mat-card-content>
-      <mat-card-content> {{ post.jobDescription }} </mat-card-content>
-      <mat-card-content> {{ post.business.email }} </mat-card-content>
-      <mat-card-content> {{ post.business.username }} </mat-card-content>
+<div id="card">
+
+      <mat-card-title>{{ post?.jobTitle }}</mat-card-title>
+      <mat-card-subtitle> {{ post?.name }} </mat-card-subtitle>
+      <mat-card-subtitle> {{ post?.payRange }} </mat-card-subtitle>
+      <mat-card-subtitle> {{ post?.location }} </mat-card-subtitle>
+      <mat-card-content> {{post?.skills}} </mat-card-content>
+      <mat-card-content> {{post?.jobDescription}} </mat-card-content>
+      <mat-card-content> {{post?.business.email}} </mat-card-content>
+      <mat-card-content> {{post?.business.username}} </mat-card-content>
+
+
+
+
   </div>

@@ -26,4 +26,9 @@ export class EmployerService {
     return this.http.get<Employer>(`https://nexuserver.herokuapp.com/business/${id}`, httpOptions)
   }
 
+  update(employer: object, id: string): Observable<Employer> {
+    console.log("getting here")
+    return this.http.put<Employer>(`https://nexuserver.herokuapp.com/business/update/${id}`, employer, httpOptions)
+  }
+
 }
