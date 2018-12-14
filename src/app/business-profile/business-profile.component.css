@@ -2,6 +2,7 @@
     width: 100vw;
     height: 35vh;
     /* background-color: rgba(88, 167, 251, 0.6); */
+    margin-top: -9em;
 }
 
 .bizName{
@@ -10,6 +11,14 @@
     color: black;
     font-size: 10em;
     /* padding-top: .4em;  */
+}
+
+.bizInfo{
+    /* color: black; */
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: black;
+    /* font-size: 10em; */
 }
 
 
