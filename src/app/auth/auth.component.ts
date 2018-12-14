@@ -90,7 +90,7 @@ export class AuthComponent implements OnInit {
         if (this.typeOfAccount === "freelance") {
             this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
         } else {
-            this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
+            this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.business.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
         }
 
     }
@@ -99,7 +99,7 @@ export class AuthComponent implements OnInit {
         if (sessionStorage.getItem("account") === "freelance") {
             this.employeeService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.redirect() })
         } else {
-            this.employerService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.id), this.redirect() })
+            this.employerService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.business.id), this.redirect() })
         }
     }
 
