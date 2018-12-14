@@ -1,13 +1,24 @@
 .bizHeader{
     width: 100vw;
     height: 35vh;
-    background-color: rgba(88, 167, 251, 0.6);
+    /* background-color: rgba(88, 167, 251, 0.6); */
 }
 
 .bizName{
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    color: white;
+    color: black;
     font-size: 10em;
-    padding-top: .4em; 
+    /* padding-top: .4em;  */
+}
+
+
+mat-card{
+    background: #fff;
+    padding: 20px;
+    margin: 1em auto;
+    border-radius: 1.5em;
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 45vw;
 }

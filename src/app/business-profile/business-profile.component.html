@@ -1,7 +1,6 @@
 <app-navbar></app-navbar>
-<div>
-  <p>{{ profile?.username }}</p>
-  <p>{{ profile?.name }}</p>
+<div class="bizHeader">
+  <p class="bizName">{{ profile?.name }}</p>
   <p>{{ profile?.phoneNumber }}</p>
   <p>{{ profile?.location }}</p>
   <p>{{ profile?.profilePicture }}</p>
@@ -11,14 +10,15 @@
 </div>
 
 <div *ngFor="let post of posts" id="card">
-  <mat-card>
-    <section id="left-column">
-      <h2>{{ post?.jobTitle }}</h2>
-      <h3>{{ post?.location }}</h3>
-    </section>
-    <section id="right-column">
-      <p> {{ post?.skills }}</p>
-      <p> {{ post?.jobDescription }}</p>
-    </section>
-  </mat-card>
-</div>
+    <mat-card>
+      <mat-card-title>{{ post.jobTitle }}</mat-card-title>
+      <mat-card-subtitle> {{ post.name }} </mat-card-subtitle>
+      <mat-card-subtitle> {{ post.location }} </mat-card-subtitle>
+      <mat-card-content> {{post.skills}} </mat-card-content>
+      <mat-card-content> {{post.jobDescription}} </mat-card-content>
+      <mat-card-actions>
+        <button mat-button (click)="openForm()">Update Post</button>
+        <button mat-button (click)="openForm()">Delete Post</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
