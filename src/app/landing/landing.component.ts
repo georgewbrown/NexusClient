@@ -44,7 +44,7 @@ export class LandingComponent implements OnInit {
     if (sessionStorage.getItem("account") === "freelance") {
         this.employeeService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.redirect() })
     } else {
-        this.employerService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.business.id), this.redirect() })
+        this.employerService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.id), this.redirect() })
     }
 }
 
