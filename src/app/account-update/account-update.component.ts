@@ -41,7 +41,7 @@ export class AccountUpdateComponent implements OnInit {
   }
 
   submit(AccountUpdateForm) {
-      this.matDialogRef.close(AccountUpdateForm.value)
+    this.matDialogRef.close(AccountUpdateForm.value)
 
-    }
   }
+}

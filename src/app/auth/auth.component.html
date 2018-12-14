@@ -1,44 +1,32 @@
 <style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins');
+  @import url('https://fonts.googleapis.com/css?family=Poppins');
 </style>
 
 <app-navbar></app-navbar>
 <div class="background">
-<div class="authContainer">
-    
-<div class="authBox">
-  
-  <h2 class="title">Login</h2>
-  <hr />
-  <br />
-  <br />
-  <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount">
-    <div>Please select a button (required):</div>
-    <br />
-    <mat-radio-button name="business" value="business" (change)="handleAccountType($event)">Business</mat-radio-button>
-    <mat-radio-button name="freelance" value="freelance" (change)="handleAccountType($event)">Freelancer</mat-radio-button>
-  </mat-radio-group>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    <div>
-      <br />
-      <br />
-      <label></label>
-      <input class="unBox" name="name" type="text" placeholder="Username or Email" formControlName="name" (keyup)="handleName($event)" required>
-      <!-- <div *ngIf="name.errors.required">Username is required!</div> -->
+  <div class="authContainer">
+    <div class="authBox">
+      <h2 class="title">Login</h2>
+      <mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount">
+        <div>Please select a button (required):</div>
+        <mat-radio-button id="businessButton" name="business" value="business" (change)="handleAccountType($event)">Business</mat-radio-button>
+        <mat-radio-button id="freelancerButton" name="freelance" value="freelance" (change)="handleAccountType($event)">Freelancer</mat-radio-button>
+      </mat-radio-group>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="formContainer">
+          <mat-form-field>
+            <input matInput class="unBox" name="name" type="text" placeholder="Username or Email" formControlName="name"
+              (keyup)="handleName($event)" [errorStateMatcher]="matcher" required>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput class="pwBox" name="password" type="password" placeholder="Password" formControlName="password"
+              (keyup)="handlePassword($event)" [errorStateMatcher]="matcher" required>
+          </mat-form-field>
+          <button class="button" type="submit" [disabled]="typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Login</button>
+          <label class="signUp">Don't have an account?</label>
+          <button class="signUp" id="signUpButton" mat-button (click)="openForm()">Sign Up!</button>
+        </div>
+      </form>
     </div>
-    <div>
-      <label></label>
-      <br />
-      <input class="pwBox" name="password" type="password" placeholder="Password" formControlName="password" (keyup)="handlePassword($event)" required>
-    </div>
-    <br />
-    <button class="button" type="submit" [disabled]="typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Login</button>
-    <br />
-    <br />
-    <br />
-    <label>Don't have an account?</label>
-    <button class="signUp" mat-button (click)="openForm()">Sign Up!</button>
-  </form>
-</div>
-</div>
+  </div>
 </div>

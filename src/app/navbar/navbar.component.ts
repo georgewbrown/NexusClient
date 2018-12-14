@@ -1,38 +1,33 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, state, style, animate, transition } from '@angular/animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css'],
-  animations: [
-    trigger("collapse", [
-      state("open", style({
-        opacity: "1",
-        display: "block",
-        transform: "translateX(0)"
-      })),
-      state("closed", style({
-        opacity: "0",
-        display: "none",
-        transform: "translateX(-50%)"
-      })),
-      transition("closed => open", animate("500ms ease-in")),
-      transition("open => closed", animate("400ms ease-out"))
-    ])
-  ]
 })
 
 export class NavbarComponent implements OnInit {
-  collapse: string = "closed";
+  isLoggedIn = sessionStorage.getItem("account")
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
-  toggleCollapse() {
-    this.collapse = this.collapse == "open" ? 'closed' : 'open';
+  logout() {
+    sessionStorage.clear()
+    this.handleAccount()
+  }
+
+  handleAccount() {
+    if (sessionStorage.getItem("account") === "freelance") {
+      this.router.navigate(["/fprofile"])
+    } else if (sessionStorage.getItem("account") === "business") {
+      this.router.navigate(["/bprofile"])
+    } else {
+      this.router.navigate(["/account"])
+    }
   }
 
 }

@@ -1,4 +1,4 @@
-@media (min-width: 320px) and (max-width: 780px){
+@media (min-width: 320px) and (max-width: 1023px){
     .landing {
         background-image: url("../../assets/Nexus_Landing_Page_BKG.jpg");
         background-size: 100vw ;
@@ -94,6 +94,7 @@
     height: 100vh;
     width: 100vw;
     margin-top: -.5em;
+    background-repeat: no-repeat;
 }
 
 .button1{
@@ -126,19 +127,12 @@
     width: 100vw;
 }
 
-.peyton{
-    margin-left: 20vh;
-    width: 25vw;
-    background-image: url('../../assets/peytonCEO.jpg');
-    background-repeat: no-repeat;
-    background-size: auto;
-}
-
 .quote{
-    margin-left: 20vh;
+    text-align: center;
     font-family: 'Poppins', sans-serif;
     margin-top: 15vh;
     font-display: bolder;
+    font-size: 2em;
 }
 
 .aboutBreak{
@@ -186,6 +180,7 @@
     height: 1vh;
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    
 }
 
 }
