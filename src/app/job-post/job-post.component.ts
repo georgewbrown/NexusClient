@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 import { PostsService } from "../services/posts.service";
-import {MatDialog, MatDialogRef} from '@angular/material';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 
 @Component({
   selector: 'app-job-post',
@@ -8,19 +8,24 @@ import {MatDialog, MatDialogRef} from '@angular/material';
   styleUrls: ['./job-post.component.css']
 })
 export class JobPostComponent implements OnInit {
-  posts;
+  post;
   dialogReturn: MatDialogRef<JobPostComponent>
 
   constructor(private postsService: PostsService,
     public form: MatDialog,
+    @Inject(MAT_DIALOG_DATA) public data: any
     ) { }
 
   ngOnInit() {
-    this.getPosts()
+    this.moreInfo()
+  }
+
+  moreInfo() {
+    this.postsService.getPostsByID(this.data.id).subscribe(res => this.post = res)
   }
 
   getPosts() {
-    this.postsService.getPosts().subscribe((res: any) => {this.posts = res.post, console.log(res.post)})
+    this.postsService.getPosts().subscribe((res: any) => {this.post = res.post, console.log(res.post)})
   }
 
   openForm(){

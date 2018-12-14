@@ -23,11 +23,17 @@ export class PostsComponent implements OnInit {
   }
 
   getPosts() {
-    this.postsService.getPosts().subscribe((res: any) => {this.posts = res.post, console.log(res.post)})
+    this.postsService.getPosts().subscribe((res: any) => this.posts = res.post)
   }
 
-  openForm(){
-    this.dialogReturn = this.form.open(JobPostComponent);
+  openForm(id){
+    this.dialogReturn = this.form.open(JobPostComponent, {
+      data: {
+        id: id
+      }
+    });
+
+
 
     this.dialogReturn.afterClosed().subscribe(res => { console.log(res)})
   }
