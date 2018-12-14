@@ -25,11 +25,11 @@ export class BusinessProfileComponent implements OnInit {
 
   ngOnInit() {
     this.getAccount()
-    this.getPosts()
+    // this.getPosts()
   }
 
   getAccount() {
-    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => this.profile = res)
+    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => {this.profile = res, this.posts = res.posts})
   }
 
   openForm() {
