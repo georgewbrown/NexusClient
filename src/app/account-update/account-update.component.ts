@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from '@angular/core';
-import { Validators, FormBuilder, FormGroup } from '@angular/forms';
+import { Validators, FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { TransferService } from '../services/transfer.service';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
 import { EmployeeService } from '../services/employee.service';
@@ -11,7 +11,8 @@ import { EmployerService } from '../services/employer.service';
   styleUrls: ['./account-update.component.css']
 })
 export class AccountUpdateComponent implements OnInit {
-  AccountUpdateForm: FormGroup
+  FreelancerUpdateForm: FormGroup;
+  BusinessUpdateForm: FormGroup;
   account
 
   constructor(
@@ -24,20 +25,33 @@ export class AccountUpdateComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.AccountUpdateForm = this.formBuilder.group({
-      name: this.data.account.name,
-      email: this.data.account.email,
-      password: this.data.account.password,
-      profilePicture: this.data.account.profilePicture,
-      phoneNumber: this.data.account.phoneNumber,
-      location: this.data.account.location,
-      linkdin: this.data.account.linkdin,
-      faceBook: this.data.account.faceBook,
-      instagram: this.data.account.instagram,
-      twitter: this.data.account.twitter,
-      skills: this.data.account.skills,
-      about: this.data.account.skills,
+    this.FreelancerUpdateForm = this.formBuilder.group({
+      username: new FormControl ("", Validators.required),
+      name: new FormControl("", Validators.required),
+      email: new FormControl ("", [Validators.required, Validators.email]),
+      password: new FormControl ("", [Validators.required, Validators.minLength(6)]),
+      profilePicture: '',
+      phoneNumber: '',
+      location: '',
+      linkdin: '',
+      faceBook: '',
+      instagram: '',
+      twitter: '',
+      skills: '',
+      about: ''
     });
+
+    this.BusinessUpdateForm = this.formBuilder.group({
+      username: new FormControl("", Validators.required),
+      name: new FormControl("", Validators.required),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl("", [Validators.required, Validators.minLength(6)]),
+      phoneNumber: "",
+      location: "",
+      website: "",
+      about: ""
+    })
+
   }
 
   submit(AccountUpdateForm) {
