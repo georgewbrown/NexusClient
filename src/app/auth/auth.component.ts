@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, RouterLink } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormGroupDirective, NgForm } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
 import { AlertService } from '../services/alert.service';
@@ -9,7 +9,7 @@ import { EmployeeService } from "../services/employee.service";
 import { EmployerService } from "../services/employer.service"
 import { Employee } from "../models/employee.model"
 import { AccountCreateComponent } from '../account-create/account-create.component';
-import { MatDialog, MatDialogRef } from '@angular/material';
+import { MatDialog, MatDialogRef, ErrorStateMatcher } from '@angular/material';
 import { ProfileComponent } from '../profile/profile.component';
 import { TransferService } from '../services/transfer.service';
 
@@ -19,13 +19,15 @@ import { TransferService } from '../services/transfer.service';
     styleUrls: ['./auth.component.css']
 })
 export class AuthComponent implements OnInit {
-    loginForm: FormGroup;
-    returnUrl: string;
-    name: string;
-    password: string;
-    typeOfAccount: string;
-    user;
+    loginForm: FormGroup
+    returnUrl: string
+    name: string
+    password: string
+    typeOfAccount: string
+    user
     dialogReturn: MatDialogRef<AccountCreateComponent>
+    matcher = new MyErrorStateMatcher
+    submitted: boolean = false
 
 
     constructor(
@@ -71,7 +73,7 @@ export class AuthComponent implements OnInit {
         if (this.name.includes("@")) {
             this.user = { email: this.name, password: this.password }
         } else {
-            this.user = { name: this.name, password: this.password }
+            this.user = { username: this.name, password: this.password }
         }
     }
 
@@ -86,6 +88,7 @@ export class AuthComponent implements OnInit {
     }
 
     onSubmit() {
+        this.loading = true
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
             this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
@@ -110,3 +113,10 @@ export class AuthComponent implements OnInit {
     }
 
 }
+
+export class MyErrorStateMatcher implements ErrorStateMatcher {
+    isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+      const isSubmitted = form && form.submitted;
+      return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    }
+  }
