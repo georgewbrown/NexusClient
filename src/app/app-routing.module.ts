@@ -14,7 +14,7 @@ import { JobPostComponent } from './job-post/job-post.component';
 const routes: Routes = [
   {path: '', redirectTo:'/landing', pathMatch: 'full'},
   {path: 'landing', component: LandingComponent },
-  {path: 'posts', component: PostsComponent, canActivate: [AuthenticationGuard]},
+  {path: 'posts', component: PostsComponent},
   {path: 'account', component: AuthComponent },
   {path: 'fprofile', component: ProfileComponent },
   {path: 'bprofile', component: BusinessProfileComponent },

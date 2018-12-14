@@ -4,7 +4,6 @@ import { EmployerService } from "../services/employer.service";
 import { EmployeeService } from "../services/employee.service";
 import { Employee } from '../models/employee.model';
 import { Employer } from "../models/employer.model"
-import { TransferService } from '../services/transfer.service';
 import { Router } from '@angular/router';
 import { MatDialogRef, ErrorStateMatcher } from '@angular/material';
 
@@ -27,7 +26,6 @@ export class AccountCreateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private employeeService: EmployeeService,
     private employerService: EmployerService,
-    public transferService: TransferService,
     private router: Router,
     private matDialogRef: MatDialogRef<AccountCreateComponent>
   ) { }
