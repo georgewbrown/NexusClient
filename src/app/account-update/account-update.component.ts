@@ -13,7 +13,7 @@ import { EmployerService } from '../services/employer.service';
 export class AccountUpdateComponent implements OnInit {
   FreelancerUpdateForm: FormGroup;
   BusinessUpdateForm: FormGroup;
-  account
+  typeOfAccount: string = sessionStorage.getItem("account")
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,35 +26,37 @@ export class AccountUpdateComponent implements OnInit {
 
   ngOnInit() {
     this.FreelancerUpdateForm = this.formBuilder.group({
-      username: new FormControl ("", Validators.required),
-      name: new FormControl("", Validators.required),
-      email: new FormControl ("", [Validators.required, Validators.email]),
-      password: new FormControl ("", [Validators.required, Validators.minLength(6)]),
-      profilePicture: '',
-      phoneNumber: '',
-      location: '',
-      linkdin: '',
-      faceBook: '',
-      instagram: '',
-      twitter: '',
-      skills: '',
-      about: ''
+      username: this.data.account.username,
+      name: this.data.account.name,
+      email: this.data.account.email,
+      password: this.data.account.password,
+      profilePicture: this.data.account.profilePicture,
+      phoneNumber: this.data.account.phoneNumber,
+      location: this.data.account.location,
+      linkdin: this.data.account.linkdin,
+      faceBook: this.data.account.faceBook,
+      instagram: this.data.account.instagram,
+      twitter: this.data.account.twitter,
+      skills: this.data.account.skills,
+      about: this.data.account.about
     });
 
     this.BusinessUpdateForm = this.formBuilder.group({
-      username: new FormControl("", Validators.required),
-      name: new FormControl("", Validators.required),
-      email: new FormControl("", [Validators.required, Validators.email]),
-      password: new FormControl("", [Validators.required, Validators.minLength(6)]),
-      phoneNumber: "",
-      location: "",
-      website: "",
-      about: ""
+      username: this.data.account.username,
+      name: this.data.account.name,
+      email: this.data.account.email,
+      password: this.data.account.password,
+      phoneNumber: this.data.account.phoneNumber,
+      location: this.data.account.location,
+      website: this.data.account.website,
+      about: this.data.account.about
     })
-
   }
 
+  
+
   submit(AccountUpdateForm) {
+    console.log(AccountUpdateForm.value)
     this.matDialogRef.close(AccountUpdateForm.value)
 
   }

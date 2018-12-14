@@ -1,28 +1,18 @@
-<h2 class="title" mat-dialog-title>SIGN UP FOR NEXUS</h2>
-<mat-radio-group [(ngModel)]="typeOfAccount" name="typeOfAccount">
-  <div>Please select a button (required):</div>
-  <mat-radio-button name="business" value="business" (change)="handleButton($event)">Business</mat-radio-button>
-  <mat-radio-button name="freelance" value="freelance" (change)="handleButton($event)">Freelancer</mat-radio-button>
-</mat-radio-group>
-<form [formGroup]="FreelancerCreateForm" *ngIf="typeOfAccount === 'freelance' " (ngSubmit)="submit(FreelancerCreateForm)">
+<h2 class="title" mat-dialog-title>Update Account</h2>
+<form [formGroup]="FreelancerUpdateForm" *ngIf="typeOfAccount === 'freelance' " (ngSubmit)="submit(FreelancerUpdateForm)">
   <mat-dialog-content class="mat-typography">
     <div class="signUpContainer">
       <mat-form-field>
-        <input matInput class="inputBox" placeholder="Username" formControlName="username" [errorStateMatcher]="matcher"
-          required>
-        <mat-error *ngIf="fc().username.hasError('required')">Username is <strong>required</strong></mat-error>
+        <input matInput class="inputBox" placeholder="Username" formControlName="username">
       </mat-form-field>
       <mat-form-field>
-        <input matInput class="inputBox" placeholder="Full Name" formControlName="name" [errorStateMatcher]="matcher"
-          required>
+        <input matInput class="inputBox" placeholder="Full Name" formControlName="name">
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email" [errorStateMatcher]="matcher"
-          required>
+        <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email">
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" class="inputBox" placeholder="Password" formControlName="password"
-          [errorStateMatcher]="matcher" required>
+        <input matInput type="password" class="inputBox" placeholder="Password" formControlName="password">
       </mat-form-field>
       <mat-form-field>
         <input matInput type="picture" class="inputBox" placeholder="Profile Picture" formControlName="profilePicture">
@@ -60,20 +50,20 @@
     <button class="buttons" mat-button cdkFocusInitial type="submit">Sign Up</button>
   </mat-dialog-actions>
 </form>
-<form [formGroup]="BusinessCreateForm" *ngIf="typeOfAccount === 'business' " (ngSubmit)="submit(BusinessCreateForm)">
+<form [formGroup]="BusinessUpdateForm" *ngIf="typeOfAccount === 'business' " (ngSubmit)="submit(BusinessUpdateForm)">
   <mat-dialog-content class="mat-typography">
     <div class="signUpContainer">
       <mat-form-field>
-        <input matInput class="inputBox" placeholder="Username" formControlName="username" required>
+        <input matInput class="inputBox" placeholder="Username" formControlName="username">
       </mat-form-field>
       <mat-form-field>
-        <input matInput class="inputBox" placeholder="Business Name" formControlName="name" required>
+        <input matInput class="inputBox" placeholder="Business Name" formControlName="name">
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email" required>
+        <input matInput type="email" class="inputBox" placeholder="Email" formControlName="email">
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" class="inputBox" placeholder="Password" formControlName="password" required>
+        <input matInput type="password" class="inputBox" placeholder="Password" formControlName="password">
       </mat-form-field>
       <mat-form-field>
         <input matInput type="text" class="inputBox" placeholder="Phone Number" formControlName="phoneNumber">

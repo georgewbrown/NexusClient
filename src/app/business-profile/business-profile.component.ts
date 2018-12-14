@@ -39,7 +39,7 @@ export class BusinessProfileComponent implements OnInit {
       }
     });
 
-    // this.dialogReturn.afterClosed().subscribe(res => { this.employerService.update(res, sessionStorage.getItem("id")).subscribe(res => this.getAccount()) })
+    this.dialogReturn.afterClosed().subscribe(res => { this.employerService.update(res, sessionStorage.getItem("id")).subscribe(res =>{ console.log(res), this.getAccount()}) })
   }
 
   getPosts() {
