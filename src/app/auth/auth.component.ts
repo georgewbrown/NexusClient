@@ -88,7 +88,6 @@ export class AuthComponent implements OnInit {
     }
 
     onSubmit() {
-        this.loading = true
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
             this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
