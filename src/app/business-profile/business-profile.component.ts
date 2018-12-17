@@ -51,7 +51,11 @@ export class BusinessProfileComponent implements OnInit {
   }
 
   createPostDialog() {
-    this.postDialog = this.postForm.open(CreatePostComponent)
+    this.postDialog = this.postForm.open(CreatePostComponent, {
+      data: {
+        account: this.profile.name
+      }
+    })
 
     this.postDialog.afterClosed().subscribe(res => {console.log(res), this.postCreate(res)})
   }
