@@ -1,20 +1,18 @@
 <app-navbar></app-navbar>
-<div id="content">
-  <form class="formContainer" [formGroup]="adminForm" (ngSubmit)="onSubmit()">
-    <mat-form-field>
-      <input matInput placeholder="Enter your username" [formControl]"admin" name="name" type="text" required>
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput placeholder="Enter your password" name="password" type="password" >
-      <mat-error *ngIf="name.invalid">{{getErrorMessage()}}</mat-error>
-    </mat-form-field>
+
+<form [formGroup]="adminForm" [hidden]="success" (ngSubmit)="submitHandler()">
   
-  
-    <div *ngIf="name.errors.required">
-      Name is required.
-    </div>
-    <div *ngIf="name.errors.minlength">
-      Name must be at least 6 characters long.
-    </div>
-  </form>
-</div>
+    <hr>
+
+    <mat-form-field>
+        <input matInput placeholder="email" formControlName="email">
+    </mat-form-field>
+
+    <mat-form-field>
+        <input matInput placeholder="password" formControlName="password">
+    </mat-form-field>
+
+
+    <button mat-button color="primary" type="submit" [disabled]="adminForm.invalid">Submit Form</button>
+
+</form>
