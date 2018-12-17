@@ -1,6 +1,6 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { PostsService } from "../services/posts.service";
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-job-post',
@@ -14,7 +14,7 @@ export class JobPostComponent implements OnInit {
   constructor(private postsService: PostsService,
     public form: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any
-    ) { }
+  ) { }
 
   ngOnInit() {
     this.moreInfo()
@@ -25,14 +25,14 @@ export class JobPostComponent implements OnInit {
   }
 
   getPosts() {
-    this.postsService.getPosts().subscribe((res: any) => {this.post = res.post, console.log(res.post)})
+    this.postsService.getPosts().subscribe((res: any) => { this.post = res.post, console.log(res.post) })
   }
 
-  openForm(){
+  openForm() {
     this.dialogReturn = this.form.open(JobPostComponent);
 
-    this.dialogReturn.afterClosed().subscribe(res => { console.log(res)})
+    this.dialogReturn.afterClosed().subscribe(res => { console.log(res) })
   }
-  
+
 
 }
