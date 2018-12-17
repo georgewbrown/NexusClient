@@ -10,13 +10,17 @@ export class AdminLoginComponent implements OnInit {
   
   adminForm: FormGroup
   
+    //Form state
+    loading = false;
+    success = false;
   
-  constructor() { }
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
-    this.adminForm = new FormGroup({
-      name: new FormControl()
-   });
+    this.adminForm = this.fb.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required],
+    });
   }
   
 
