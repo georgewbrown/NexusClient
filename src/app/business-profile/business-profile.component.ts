@@ -6,6 +6,8 @@ import { Employer } from '../models/employer.model';
 import { PostsService } from '../services/posts.service';
 import { EmployerService } from '../services/employer.service';
 import { CreatePostComponent } from '../create-post/create-post.component';
+import { UpdatePostComponent } from '../update-post/update-post.component';
+import { JobPostComponent } from '../job-post/job-post.component';
 
 @Component({
   selector: 'app-business-profile',
@@ -17,6 +19,7 @@ export class BusinessProfileComponent implements OnInit {
   profile
   dialogReturn: MatDialogRef<AccountUpdateComponent>
   postDialog: MatDialogRef<CreatePostComponent>
+  postUpdateReturn: MatDialogRef<UpdatePostComponent>
   posts
 
   constructor(
@@ -31,7 +34,7 @@ export class BusinessProfileComponent implements OnInit {
   }
 
   getAccount() {
-    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => { this.profile = res, this.posts = res.posts })
+    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => { this.profile = res, this.posts = res.posts, console.log(this.posts) })
   }
 
   openForm() {
@@ -47,7 +50,15 @@ export class BusinessProfileComponent implements OnInit {
   }
 
   postCreate(post) {
-    this.postsService.create(post).subscribe(res => {console.log(res), this.getAccount()})
+    this.postsService.create(post).subscribe(res => { console.log(res), this.getAccount() })
+  }
+
+  postUpdate(post) {
+    this.postsService.update(post.id, post).subscribe(res => { console.log(res), this.getAccount() })
+  }
+
+  postDelete(id) {
+    this.postsService.delete(id).subscribe(res => this.getAccount())
   }
 
   createPostDialog() {
@@ -57,6 +68,25 @@ export class BusinessProfileComponent implements OnInit {
       }
     })
 
-    this.postDialog.afterClosed().subscribe(res => {console.log(res), this.postCreate(res)})
+    this.postDialog.afterClosed().subscribe(res => { console.log(res), this.postCreate(res) })
   }
+
+  postUpdateDialog(post) {
+    this.postUpdateReturn = this.form.open(UpdatePostComponent, {
+      data: {
+        post: post
+      }
+    })
+
+    this.postUpdateReturn.afterClosed().subscribe(res => { console.log(res), this.postUpdate(res) })
+  }
+
+  moreInfoDialog(id){
+    this.form.open(JobPostComponent, {
+      data: {
+        id: id
+      }
+    });
+  }
+
 }

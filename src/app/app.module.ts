@@ -27,6 +27,7 @@ import { JobPostComponent } from './job-post/job-post.component';
 import { CreatePostComponent } from './create-post/create-post.component'
 import { AdminLoginComponent } from './admin-login/admin-login.component'
 import { createScope } from '@angular/core/src/profile/wtf_impl';
+import { UpdatePostComponent } from './update-post/update-post.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { createScope } from '@angular/core/src/profile/wtf_impl';
     JobPostComponent,
     CreatePostComponent,
     AdminLoginComponent,
+    UpdatePostComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +59,6 @@ import { createScope } from '@angular/core/src/profile/wtf_impl';
   providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }, {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent],
-  entryComponents:[AccountUpdateComponent, CreatePostComponent]
+  entryComponents:[AccountUpdateComponent, CreatePostComponent, UpdatePostComponent]
 })
 export class AppModule { }
