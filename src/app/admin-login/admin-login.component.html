@@ -1,18 +1,6 @@
 <app-navbar></app-navbar>
 
-<form [formGroup]="adminForm" [hidden]="success" (ngSubmit)="submitHandler()">
-  
-    <hr>
-
-    <mat-form-field>
-        <input matInput placeholder="email" formControlName="email">
-    </mat-form-field>
-
-    <mat-form-field>
-        <input matInput placeholder="password" formControlName="password">
-    </mat-form-field>
-
-
-    <button mat-button color="primary" type="submit" [disabled]="adminForm.invalid">Submit Form</button>
-
-</form>
+<div class="form-container">
+    <span class="error" *ngIf="error">{{ error }}</span>
+    <button routerLink="/login-email" id="email">Email</button>
+  </div>
