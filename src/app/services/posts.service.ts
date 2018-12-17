@@ -31,8 +31,8 @@ export class PostsService {
     return this.http.post("https://nexuserver.herokuapp.com/post/create", post, httpOptions)
   }
 
-  update(post: object): Observable<any> {
-    return this.http.put("https://nexuserver.herokuapp.com/post/update", post, httpOptions)
+  update(id : string, post: object): Observable<any> {
+    return this.http.put(`https://nexuserver.herokuapp.com/post/update/${id}`, post, httpOptions)
   }
 
   delete(id: string): Observable<any> {
