@@ -5,6 +5,7 @@ import { AccountUpdateComponent } from "../account-update/account-update.compone
 import { Employer } from '../models/employer.model';
 import { PostsService } from '../services/posts.service';
 import { EmployerService } from '../services/employer.service';
+import { CreatePostComponent } from '../create-post/create-post.component';
 
 @Component({
   selector: 'app-business-profile',
@@ -15,11 +16,13 @@ import { EmployerService } from '../services/employer.service';
 export class BusinessProfileComponent implements OnInit {
   profile
   dialogReturn: MatDialogRef<AccountUpdateComponent>
+  postDialog: MatDialogRef<CreatePostComponent>
   posts
 
   constructor(
     private employerService: EmployerService,
     public form: MatDialog,
+    public postForm: MatDialog,
     private postsService: PostsService
   ) { }
 
@@ -28,7 +31,7 @@ export class BusinessProfileComponent implements OnInit {
   }
 
   getAccount() {
-    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => {this.profile = res, this.posts = res.posts})
+    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => { this.profile = res, this.posts = res.posts })
   }
 
   openForm() {
@@ -38,8 +41,14 @@ export class BusinessProfileComponent implements OnInit {
       }
     });
 
-    this.dialogReturn.afterClosed().subscribe(res => { this.employerService.update(res, sessionStorage.getItem("id")).subscribe(res =>{ console.log(res), this.getAccount()}) })
+
+
+    this.dialogReturn.afterClosed().subscribe(res => { this.employerService.update(res, sessionStorage.getItem("id")).subscribe(res => { console.log(res), this.getAccount() }) })
   }
 
+  createPost() {
+    this.postDialog = this.postForm.open(CreatePostComponent)
 
+    this.dialogReturn.afterClosed().subscribe(res => {console.log(res)})
+  }
 }

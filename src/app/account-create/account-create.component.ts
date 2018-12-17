@@ -38,15 +38,15 @@ export class AccountCreateComponent implements OnInit {
       name: new FormControl("", Validators.required),
       email: new FormControl ("", [Validators.required, Validators.email]),
       password: new FormControl ("", [Validators.required, Validators.minLength(6)]),
-      profilePicture: '',
-      phoneNumber: '',
-      location: '',
-      linkdin: '',
-      faceBook: '',
-      instagram: '',
-      twitter: '',
-      skills: '',
-      about: ''
+      profilePicture: "",
+      phoneNumber: "",
+      location: "",
+      linkdin: "",
+      faceBook: "",
+      instagram: "",
+      twitter: "",
+      skills: "",
+      about: ""
     });
 
     this.BusinessCreateForm = this.formBuilder.group({

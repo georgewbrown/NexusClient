@@ -28,4 +28,8 @@ export class PostsService {
     return this.http.get<any>(`https://nexuserver.herokuapp.com/post/${id}`)
   }
 
+  create(post: object): Observable<any> {
+    return this.http.post<any>("https://nexuserver.herokuapp.com/post/create", post, httpOptions)
+  }
+
 }
