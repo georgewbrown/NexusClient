@@ -22,10 +22,10 @@ import { AuthenticationGuard } from './guards/authentication.guard';
 import { EmployerService } from "./services/employer.service";
 import { JwtInterceptor } from "./helpers/jwt.interceptor";
 import { ErrorInterceptor } from "./helpers/error.interceptor";
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TransferService } from "./services/transfer.service";
 import { BusinessProfileComponent } from './business-profile/business-profile.component';
-import { JobPostComponent } from './job-post/job-post.component'
+import { JobPostComponent } from './job-post/job-post.component';
+import { AdminLoginComponent } from './admin-login/admin-login.component'
 
 @NgModule({
   declarations: [
@@ -40,6 +40,7 @@ import { JobPostComponent } from './job-post/job-post.component'
     AccountUpdateComponent,
     BusinessProfileComponent,
     JobPostComponent,
+    AdminLoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +51,6 @@ import { JobPostComponent } from './job-post/job-post.component'
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    AngularFontAwesomeModule
   ],
   providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }, {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],

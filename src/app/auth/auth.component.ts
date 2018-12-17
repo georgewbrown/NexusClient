@@ -84,6 +84,9 @@ export class AuthComponent implements OnInit {
             this.router.navigate(["/bprofile"])
         }
     }
+    adminRedirect(){
+        this.router.navigate(["/admin"])
+    }
 
     onSubmit() {
         this.handleUser()
