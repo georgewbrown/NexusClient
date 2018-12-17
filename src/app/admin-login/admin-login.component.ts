@@ -1,6 +1,6 @@
-import { Component, OnInit,HostBinding } from '@angular/core';
-import { AdminService } from '../services/admin.service'
-import { Router } from "@angular/router";
+import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder,Validators } from '@angular/forms';
+import { EmployeeService } from '../services/employee.service';
 
 @Component({
   selector: 'app-admin-login',
@@ -9,18 +9,17 @@ import { Router } from "@angular/router";
 })
 export class AdminLoginComponent implements OnInit {
 
-error: any;
-  constructor(public as: AdminService, private router: Router) {
+adminForm: FormGroup
 
-    // this.as.auth.subscribe( auth => {
-    //   if(auth) {
-    //     this.router.navigateByUrl('/landing');
-    //   }
-    // });
-   }
+error: any;
+  constructor(private fb: FormBuilder, public es: EmployeeService,) {}
+
 
   ngOnInit(){
-
+    this.adminForm = this.fb.group({
+      name: ['', Validators.required],
+      password: ['', Validators.required],
+    })
   }
 
 }

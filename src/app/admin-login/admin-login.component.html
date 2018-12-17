@@ -1,6 +1,10 @@
 <app-navbar></app-navbar>
 
-<div class="form-container">
-    <span class="error" *ngIf="error">{{ error }}</span>
-    <button routerLink="/login-email" id="email">Email</button>
-  </div>
+<form [formGroup]="admminForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input matInput  name="name" placeholder="Username or Email" formControlName="name" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput name="password" placeholder="Password" formControlName="password" required>
+      </mat-form-field>
+</form>
