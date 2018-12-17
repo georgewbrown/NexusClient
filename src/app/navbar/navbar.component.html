@@ -1,10 +1,20 @@
-<nav class="NavBar" >
-    <ul>
-      <a class="Home" routerLink="/landing">HOME</a>
-      <a class="AboutUs" href="http://localhost:4200/landing#aboutSect">ABOUT US</a>
-      <a class="Jobs" routerLink="/posts">JOBS</a>
-      <a class="Account" (click)="handleAccount()">ACCOUNT</a>
+<nav class="NavBar">
+  <ul>
+    <li>
+      <a routerLink="/landing">HOME</a>
+    </li>
+    <li>
+      <a href="http://localhost:4200/landing#aboutSect">ABOUT US</a>
+    </li>
+    <li>
+      <a routerLink="/posts">JOBS</a>
+    </li>
+    <li>
+      <a (click)="handleAccount()">ACCOUNT</a>
+    </li>
+    <li style="float:right">
       <a (click)="logout()" *ngIf="isLoggedIn">Logout</a>
-    </ul>
-    
-  </nav>
+    </li>
+  </ul>
+
+</nav>

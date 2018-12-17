@@ -1,74 +1,31 @@
-@media (min-width: 320px) and (max-width: 1023px){
 
-    .NavBar{
-        height: 3.5vh;
-        width: 100vw;
-        background-color: rgba(255, 255, 255, 1.0);
-        font-family: 'Poppins', sans-serif;
-    }
-    
-    .Home{
-        margin-left: -.5em;
-        text-decoration: none;
-        color: black;
-    }
-    
-    .AboutUs{
-        padding-left: 1.5em;
-        text-decoration: none;
-        color: black;
-    
-    }
-    
-    .Jobs{
-        padding-left: 1.5em;
-        text-decoration: none;
-        color: black;
-    }
-    
-    .Account{
-        padding-left: 1.5em;
-        text-decoration: none;
-        color: black;
-        cursor: pointer;
-}
-
-}
-
-@media (min-width: 1024px){
 .NavBar{
-    height: 3vh;
+    height: auto;
     background-color: rgba(255, 255, 255, 1.0);
     font-family: 'Poppins', sans-serif;
 }
 
-.Home{
-    /* margin-top: -5em;
-    margin-left: -5em;
-    height: 10em;
-    width: 15em;
-    display: inline-block; */
-    text-decoration: none;
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+li{
+    float: left;
+}
+
+li a {
+    display: block;
     color: black;
-}
-
-.AboutUs{
-    margin-left: 78vw;
+    text-align: center;
+    padding: 1em;
     text-decoration: none;
-    color: black;
-
 }
 
-.Jobs{
-    margin-left: 2vw;
-    text-decoration: none;
-    color: black;
+li a :hover {
+    background-color: #d30000
 }
 
-.Account{
-    margin-left: 2vw;
-    text-decoration: none;
-    color: black;
-}
-
-}

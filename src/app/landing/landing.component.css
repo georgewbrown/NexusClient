@@ -1,4 +1,4 @@
-@media (min-width: 320px) and (max-width: 1023px){
+@media (min-width: 320px) and (max-width: 989px){
     .landing {
         background-image: url("../../assets/Nexus_Landing_Page_BKG.jpg");
         background-size: 100vw ;
@@ -29,37 +29,7 @@
         font-size: 15px;
         font-weight: 500;
     }
-    
-    
-    /* .testimony {
-        height: 10vh;
-        width: 100vw;
 
-    } */
-    
-    /* .peyton{
-        margin-left: 20vh;
-        width: 25vw;
-        background-image: url('../../assets/peytonCEO.jpg');
-        background-repeat: no-repeat;
-        background-size: auto;
-    } */
-    
-    /* .quote{
-        margin-left: 20vh;
-        font-family: 'Poppins', sans-serif;
-        margin-top: 15vh;
-        font-display: bolder;
-    } */
-    
-    /* .aboutBreak{
-        background-image: url("../../assets/TeamLine.jpeg");
-        width: 100vw;
-        height: 40vh;
-        background-repeat: no-repeat;
-        background-position-y: 30%;
-        background-position-x: 90%;
-    } */
     
     .about {
         margin-left: 10vw;
@@ -81,27 +51,36 @@
 
 
 
-@media (min-width: 1024px){
+@media (min-width: 990px){
 
-.NavBar{
+/* .NavBar{
     height: 3vh;
     background-color: rgba(255, 255, 255, 1.0);
     font-family: 'Poppins', sans-serif;
-}
+} */
 
 .landing {
     background-image: url("../../assets/Nexus_Landing_Page_BKG.jpg");
+    background-position-x: center; 
     height: 100vh;
     width: 100vw;
-    margin-top: -.5em;
+    background-size: auto;
+    margin-top: auto;
     background-repeat: no-repeat;
+}
+
+.buttons{
+    margin-top: 50vh;
+    margin-left: 31.8vw;
+    display: inline-block;
+
 }
 
 .button1{
     width: 20em;
     height: 2.5em;
-    margin-top: 35em;
-    margin-left: 39em;
+    /* margin-top: 35em; */
+    /* margin-left: 24em; */
     border-radius: 25px;
     background-color: rgba(255, 255, 255, .7);
     font-family: 'Poppins' sans-serif;
@@ -112,7 +91,7 @@
 .button2{
     width: 20em;
     height: 2.5em;
-    margin-top: 10em;
+    /* margin-top: 10em; */
     margin-left: 5em;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, .7);
