@@ -1,17 +1,17 @@
 <app-navbar></app-navbar>
-<div class="bizHeader">
-  <h1 class="bizName">{{ profile?.name }}</h1>
+<div class="bizHeader"> {{ profile?.name }}</div>
+
+  <!-- <h1 class="bizName">{{ profile?.name }}</h1>
   <h4 class="bizInfo">{{ profile?.phoneNumber }}</h4>
   <h4 class="bizInfo">{{ profile?.location }}</h4>
   <h4 class="bizInfo">{{ profile?.website }}</h4>
   <h4 class="bizInfo">{{ profile?.about }}</h4>
-  <button mat-button (click)="openForm()">Update</button>
-</div>
+  <button mat-button (click)="openForm()">Update</button> -->
 
 <div>
   <button (click)="createPostDialog()">Create Post</button>
 </div>
-
+<hr />
 <div *ngFor="let post of posts" id="card">
     <mat-card>
       <mat-card-title>{{ post.jobTitle }}</mat-card-title>

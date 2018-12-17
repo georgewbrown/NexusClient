@@ -1,17 +1,23 @@
 .bizHeader{
     width: 100vw;
-    height: 35vh;
-    /* background-color: rgba(88, 167, 251, 0.6); */
-    margin-top: -9em;
+    height: 12.5vh;
+    background-color: rgba(88, 167, 251, 0.6);
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    padding-left: 1vw;
+    color: white;
+    font-size: 5em;
+    font-weight: 800;
 }
 
-.bizName{
+/* .bizName{
     font-family: 'Poppins', sans-serif;
     text-align: center;
     color: black;
-    font-size: 10em;
-    /* padding-top: .4em;  */
-}
+    font-size: 5em;
+    font-weight: 500;
+    padding-top: .4em; 
+} */
 
 .bizInfo{
     /* color: black; */
