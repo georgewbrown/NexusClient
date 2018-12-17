@@ -25,7 +25,8 @@ import { ErrorInterceptor } from "./helpers/error.interceptor";
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { TransferService } from "./services/transfer.service";
 import { BusinessProfileComponent } from './business-profile/business-profile.component';
-import { JobPostComponent } from './job-post/job-post.component'
+import { JobPostComponent } from './job-post/job-post.component';
+import { CreatePostComponent } from './create-post/create-post.component'
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { JobPostComponent } from './job-post/job-post.component'
     AccountUpdateComponent,
     BusinessProfileComponent,
     JobPostComponent,
+    CreatePostComponent,
   ],
   imports: [
     BrowserModule,
