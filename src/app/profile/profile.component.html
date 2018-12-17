@@ -1,5 +1,48 @@
 <app-navbar></app-navbar>
-<div>
+<div class="bizHeader">Welcome, {{ profile?.name }}</div>
+
+<mat-list class="infoList">
+    <mat-list-item>{{profile?.phoneNumber}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item> {{ profile?.email }} </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item> {{ profile?.website }} </mat-list-item>
+    <mat-divider></mat-divider>
+    <button mat-button (click)="openForm()">Update Account</button>
+    <mat-divider></mat-divider>
+    <button mat-button (click)="createPostDialog()">Create Post</button>
+  </mat-list>
+
+<!-- <hr /> -->
+<div *ngFor="let post of posts" id="card">
+  <mat-card>
+    <mat-card-title>{{ post.jobTitle }}</mat-card-title>
+    <mat-card-subtitle> {{ post.name }} </mat-card-subtitle>
+    <mat-card-subtitle> {{ post.location }} </mat-card-subtitle>
+    <mat-card-content> {{post.skills}} </mat-card-content>
+    <mat-card-content> {{post.jobDescription}} </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="moreInfoDialog(post.id)">More Info</button>
+      <button mat-button (click)="postUpdateDialog(post)">Update Post</button>
+      <button mat-button (click)="postDelete(post.id)">Delete Post</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
   <p>{{ profile?.name }}</p>
   <p>{{ profile?.email }}</p>
   <p>{{ profile?.phoneNumber }}</p>
@@ -26,4 +69,4 @@
       </section>
     </mat-card>
   </div>
- 
+  -->

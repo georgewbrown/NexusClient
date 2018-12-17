@@ -12,11 +12,11 @@ export class AdminLoginComponent implements OnInit {
 error: any;
   constructor(public as: AdminService, private router: Router) {
 
-    this.as.auth.subscribe( auth => {
-      if(auth) {
-        this.router.navigateByUrl('/landing');
-      }
-    });
+    // this.as.auth.subscribe( auth => {
+    //   if(auth) {
+    //     this.router.navigateByUrl('/landing');
+    //   }
+    // });
    }
 
   ngOnInit(){

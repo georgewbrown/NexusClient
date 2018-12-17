@@ -1,0 +1,42 @@
+.bizHeader{
+    width: 100vw;
+    height: 12.5vh;
+    background-image: url("../../assets/account_header.jpg");
+    background-repeat: no-repeat;
+    background-position-y: 90%;
+    background-position-x: 90%;
+    /* background-color: rgba(88, 167, 251, 0.6); */
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+    padding-left: 1vw;
+    color: white;
+    font-size: 5em;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.infoList{
+    width: 15vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #e2e2e2;
+}
+
+.bizInfo{
+    /* color: black; */
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    color: black;
+    /* font-size: 10em; */
+}
+
+
+mat-card{
+    background: #fff;
+    padding: 1.5em;
+    margin: 1em auto;
+    border-radius: 1.5em;
+    -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 60vw;
+}

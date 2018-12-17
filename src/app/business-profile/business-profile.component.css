@@ -22,15 +22,6 @@
     background-color: #e2e2e2;
 }
 
-/* .bizName{
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    color: black;
-    font-size: 5em;
-    font-weight: 500;
-    padding-top: .4em; 
-} */
-
 .bizInfo{
     /* color: black; */
     font-family: 'Poppins', sans-serif;
@@ -42,10 +33,10 @@
 
 mat-card{
     background: #fff;
-    padding: 20px;
+    padding: 1.5em;
     margin: 1em auto;
     border-radius: 1.5em;
     -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-    width: 45vw;
+    width: 60vw;
 }
