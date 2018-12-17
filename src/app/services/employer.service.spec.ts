@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { EmployerService } from './employer.service';
 
-describe('DatabaseService', () => {
+describe('EmployerService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
