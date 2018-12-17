@@ -6,10 +6,9 @@ import { Post } from "../models/post";
 const httpOptions = {
   headers: new HttpHeaders({
     "Content-Type": "application/json",
-    "Authorization": localStorage.getItem("token")
+    "Authorization": sessionStorage.getItem("token")
   })
 }
-
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +28,7 @@ export class PostsService {
   }
 
   create(post: object): Observable<any> {
-    return this.http.post<any>("https://nexuserver.herokuapp.com/post/create", post, httpOptions)
+    return this.http.post("https://nexuserver.herokuapp.com/post/create", post, httpOptions)
   }
 
 }
