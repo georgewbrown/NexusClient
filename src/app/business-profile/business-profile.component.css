@@ -1,13 +1,25 @@
 .bizHeader{
     width: 100vw;
     height: 12.5vh;
-    background-color: rgba(88, 167, 251, 0.6);
+    background-image: url("../../assets/account_header.jpg");
+    background-repeat: no-repeat;
+    background-position-y: 90%;
+    background-position-x: 90%;
+    /* background-color: rgba(88, 167, 251, 0.6); */
     font-family: 'Poppins', sans-serif;
     text-align: left;
     padding-left: 1vw;
     color: white;
     font-size: 5em;
     font-weight: 800;
+    text-transform: uppercase;
+}
+
+.infoList{
+    width: 15vw;
+    height: 100vh;
+    position: absolute;
+    background-color: #e2e2e2;
 }
 
 /* .bizName{
