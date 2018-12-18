@@ -15,7 +15,7 @@ You will need to have the following libraries and framework's installed to use a
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. 
+These instructions will get you a copy of the project aswell as get it up and running on your local machine for development and testing purposes. 
 
 Use `git clone git@github.com:ntemple1150/NexusClient.git`
 
