@@ -15,6 +15,9 @@
     <li style="float:right">
       <a (click)="logout()" *ngIf="isLoggedIn">Logout</a>
     </li>
+    <li>
+      <a *ngIf="isAdmin == 'true'" routerLink="/admin">ADMIN PORTAL</a>
+    </li>
   </ul>
 
 </nav>

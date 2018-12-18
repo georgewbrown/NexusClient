@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 
 export class NavbarComponent implements OnInit {
   isLoggedIn = sessionStorage.getItem("id")
+  isAdmin = sessionStorage.getItem("isAdmin")
 
   constructor(private router: Router) { }
 

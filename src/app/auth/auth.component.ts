@@ -77,10 +77,13 @@ export class AuthComponent implements OnInit {
 
     redirect(isAdmin) {
         if (isAdmin === true) {
+            sessionStorage.setItem("isAdmin", "true")
             this.router.navigate(["/admin"])
-        } else if (sessionStorage.getItem("account") === "freelance") {
+        } else if (this.typeOfAccount === "freelance") {
+            sessionStorage.setItem("account", "freelance")
             this.router.navigate(["/fprofile"])
         } else {
+            sessionStorage.setItem("account", "business")
             this.router.navigate(["/bprofile"])
         }
     }
