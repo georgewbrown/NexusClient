@@ -1,3 +1,14 @@
+.column {
+  float: left;
+  width: 25%;
+
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 h1{
   text-align: center;
   font-size: 4em;
@@ -9,4 +20,31 @@ mat-form-field {
 
 textarea {
   min-height: 130px;
+}
+
+mat-card{
+  background: #fff;
+  padding: 1.5em;
+  margin: 1em auto;
+  border-radius: 1.5em;
+  -webkit-box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: auto;
+}
+
+.sectTitle{
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  color: black;
+}
+
+.column {
+  float: left;
+  width: 25%;
+
+}
+.row{
+  content: "";
+  display: table;
+  clear: both;
 }

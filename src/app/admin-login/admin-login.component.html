@@ -1,5 +1,8 @@
 <app-navbar></app-navbar>
-<div *ngFor="let post of posts" id="card">
+<div class="row">
+
+<div *ngFor="let post of posts" id="card" class="column" style="background-color:#888888;">
+    <h1 class="sectTitle"> Job Posts </h1>
   <mat-card>
     <mat-card-title>{{ post.jobTitle }}</mat-card-title>
     <mat-card-subtitle> {{ post.name }} </mat-card-subtitle>
@@ -12,8 +15,10 @@
     </mat-card-actions>
   </mat-card>
 </div>
-<hr />
-<div *ngFor="let e of employee" id="card">
+<!-- <hr /> -->
+
+<div *ngFor="let e of employee" id="card" class="column" style="background-color:blue;">
+    <h1 class="sectTitle"> Freelance Acct.</h1>
   <mat-card>
     <mat-card-title>{{ e.name }}</mat-card-title>
     <mat-card-subtitle> {{ e.email }} </mat-card-subtitle>
@@ -33,8 +38,10 @@
     </mat-card-actions>
   </mat-card>
 </div>
-<hr>
-<div *ngFor="let employer of employers" id="card">
+<!-- <hr /> -->
+
+<div *ngFor="let employer of employers" id="card" class="column" style="background-color:green;">
+    <h1 class="sectTitle"> Biz Acct. </h1>
   <mat-card>
     <mat-card-title>{{ employer.username }}</mat-card-title>
     <mat-card-title>{{ employer.name }}</mat-card-title>
@@ -53,4 +60,5 @@
       <button mat-button (click)="employerDelete(employer.id)">Delete Account</button>
     </mat-card-actions>
   </mat-card>
+</div>
 </div>
