@@ -37,12 +37,17 @@ error: any;
     this.postsService.delete(id).subscribe(res => this.getPosts())
     console.log('this button works')
   }
-  getEmployee(id) {
-    this.employeeService.get(id).subscribe((res: any) => this.employee = res.employee)
-  }
+  // getEmployee() {
+  //   this.employeeService.getEmployee().subscribe((res: any) => this.employee = res.employee)
+  // }
   employeeUpdate(employee) {
-    this.employeeService.update(employee.id, employee).subscribe(res => { console.log(res), this.getEmployee(this.id) })
+    this.employeeService.update(employee.id, employee).subscribe(res => { console.log(res), this.getEmployee() })
   }
+
+  // employeeDelete(id) {
+  //   this.employeeService.delete(id).subscribe(res => this.getAll())
+  // }
+
 
   // employeeDelete(id) {
   //   this.employeeService.delete(id).subscribe(res => this.getAll())

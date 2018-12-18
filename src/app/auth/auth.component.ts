@@ -75,32 +75,37 @@ export class AuthComponent implements OnInit {
         }
     }
 
-    redirect() {
+    redirect(isAdmin) {
         if (sessionStorage.getItem("account") === "freelance") {
-            this.router.navigate(["/fprofile"])
+            if (isAdmin === true) {
+                this.router.navigate(["/admin"])
+            } else {
+                this.router.navigate(["/fprofile"])
+            }
+
         } else {
             this.router.navigate(["/bprofile"])
         }
     }
-    adminRedirect(){
+    adminRedirect() {
         this.router.navigate(["/admin"])
     }
 
     onSubmit() {
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
-            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
+            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect(res.employee.isAdmin) })
         } else {
-            this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.business.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect() })
+            this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.business.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect(res) })
         }
 
     }
 
     userRegister(user) {
         if (sessionStorage.getItem("account") === "freelance") {
-            this.employeeService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.redirect() })
+            this.employeeService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.redirect(res.employee.isAdmin) })
         } else {
-            this.employerService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.business.id), this.redirect() })
+            this.employerService.register(user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.business.id), this.redirect(res) })
         }
     }
 
@@ -114,7 +119,7 @@ export class AuthComponent implements OnInit {
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
     isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-      const isSubmitted = form && form.submitted;
-      return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+        const isSubmitted = form && form.submitted;
+        return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
     }
-  }
+}

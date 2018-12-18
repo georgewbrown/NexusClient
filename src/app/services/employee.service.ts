@@ -25,6 +25,10 @@ export class EmployeeService {
     return this.http.get<Employee>(`https://nexuserver.herokuapp.com/employee/${id}`, httpOptions)
   }
 
+  getEmployee(): Observable<any[]> {
+    return this.http.get<any[]>("https://nexuserver.herokuapp.com/employee/all", httpOptions)
+  }
+
   getAll(): Observable<Employee> {
     return this.http.get<Employee>("https://nexuserver.herokuapp.com/employee/all", httpOptions)
   }
