@@ -1,5 +1,5 @@
 <h2 class="title" mat-dialog-title>Update Account</h2>
-<form [formGroup]="FreelancerUpdateForm" *ngIf="typeOfAccount === 'freelance' " (ngSubmit)="submit(FreelancerUpdateForm)">
+<form [formGroup]="FreelancerUpdateForm" *ngIf="typeOfAccount === 'freelance' || adminAccountType === 'freelance' " (ngSubmit)="submit(FreelancerUpdateForm)">
   <mat-dialog-content class="mat-typography">
     <div class="signUpContainer">
       <mat-form-field>
@@ -50,7 +50,7 @@
     <button class="buttons" mat-button cdkFocusInitial type="submit">Update</button>
   </mat-dialog-actions>
 </form>
-<form [formGroup]="BusinessUpdateForm" *ngIf="typeOfAccount === 'business' " (ngSubmit)="submit(BusinessUpdateForm)">
+<form [formGroup]="BusinessUpdateForm" *ngIf="typeOfAccount === 'business' || adminAccountType === 'business' " (ngSubmit)="submit(BusinessUpdateForm)">
   <mat-dialog-content class="mat-typography">
     <div class="signUpContainer">
       <mat-form-field>

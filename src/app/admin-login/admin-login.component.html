@@ -1,34 +1,56 @@
 <app-navbar></app-navbar>
 <div *ngFor="let post of posts" id="card">
-    <mat-card>
-      <mat-card-title>{{ post.jobTitle }}</mat-card-title>
-      <mat-card-subtitle> {{ post.name }} </mat-card-subtitle>
-      <mat-card-subtitle> {{ post.location }} </mat-card-subtitle>
-      <mat-card-content> {{post.skills}} </mat-card-content>
-      <mat-card-content> {{post.jobDescription}} </mat-card-content>
-      <mat-card-actions>
-        <button mat-button (click)="postUpdateDialog(post)">Update Post</button>
-        <button mat-button (click)="postDelete(post.id)">Delete Post</button>
-      </mat-card-actions>
-    </mat-card>
+  <mat-card>
+    <mat-card-title>{{ post.jobTitle }}</mat-card-title>
+    <mat-card-subtitle> {{ post.name }} </mat-card-subtitle>
+    <mat-card-subtitle> {{ post.location }} </mat-card-subtitle>
+    <mat-card-content> {{post.skills}} </mat-card-content>
+    <mat-card-content> {{post.jobDescription}} </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="updatePost(post)">Update Post</button>
+      <button mat-button (click)="postDelete(post.id)">Delete Post</button>
+    </mat-card-actions>
+  </mat-card>
 </div>
-<div *ngFor="let employee of employees" id="card">
-    <mat-card>
-      <mat-card-title>{{ employee.name }}</mat-card-title>
-      <mat-card-subtitle> {{ employee.email }} </mat-card-subtitle>
-      <mat-card-subtitle> {{ employee.phoneNumber }} </mat-card-subtitle>
-      <mat-card-subtitle> {{ employee.location }} </mat-card-subtitle>
-      <mat-card-subtitle> {{ employee.linkdin }} </mat-card-subtitle>
-      <mat-card-content> {{employee.skills}} </mat-card-content>
-      <mat-card-content> {{employee.about}} </mat-card-content>
-      <mat-card-content> {{employee.faceBook}} </mat-card-content>
-      <mat-card-content> {{employee.instagram}} </mat-card-content>
-      <mat-card-content> {{employee.twitter}} </mat-card-content>
-      <mat-card-content> {{employee.profilePicture}} </mat-card-content>
-      <mat-card-content> {{employee.jobDescription}} </mat-card-content>
-      <mat-card-actions>
-        <button mat-button (click)="postUpdateDialog(post)">Update Post</button>
-        <button mat-button (click)="postDelete(post.id)">Delete Post</button>
-      </mat-card-actions>
-    </mat-card>
+<hr />
+<div *ngFor="let e of employee" id="card">
+  <mat-card>
+    <mat-card-title>{{ e.name }}</mat-card-title>
+    <mat-card-subtitle> {{ e.email }} </mat-card-subtitle>
+    <mat-card-subtitle> {{ e.phoneNumber }} </mat-card-subtitle>
+    <mat-card-subtitle> {{ e.location }} </mat-card-subtitle>
+    <mat-card-subtitle> {{ e.linkdin }} </mat-card-subtitle>
+    <mat-card-content> {{e.skills}} </mat-card-content>
+    <mat-card-content> {{e.about}} </mat-card-content>
+    <mat-card-content> {{e.faceBook}} </mat-card-content>
+    <mat-card-content> {{e.instagram}} </mat-card-content>
+    <mat-card-content> {{e.twitter}} </mat-card-content>
+    <mat-card-content> {{e.profilePicture}} </mat-card-content>
+    <mat-card-content> {{e.jobDescription}} </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="updateAccount(e, 'freelance')">Update Account</button>
+      <button mat-button (click)="employeeDelete(e.id)">Delete Account</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+<hr>
+<div *ngFor="let employer of employers" id="card">
+  <mat-card>
+    <mat-card-title>{{ employer.username }}</mat-card-title>
+    <mat-card-title>{{ employer.name }}</mat-card-title>
+    <mat-card-subtitle> {{ employer.email }} </mat-card-subtitle>
+    <mat-card-subtitle> {{ employer.phoneNumber }} </mat-card-subtitle>
+    <mat-card-subtitle> {{ employer.location }} </mat-card-subtitle>
+    <mat-card-subtitle> {{ employer.linkdin }} </mat-card-subtitle>
+    <mat-card-content> {{employer.skills}} </mat-card-content>
+    <mat-card-content> {{employer.about}} </mat-card-content>
+    <mat-card-content> {{employer.faceBook}} </mat-card-content>
+    <mat-card-content> {{employer.instagram}} </mat-card-content>
+    <mat-card-content> {{employer.twitter}} </mat-card-content>
+    <mat-card-content> {{employer.profilePicture}} </mat-card-content>
+    <mat-card-actions>
+      <button mat-button (click)="updateAccount(employer, 'business')">Update Account</button>
+      <button mat-button (click)="employerDelete(employer.id)">Delete Account</button>
+    </mat-card-actions>
+  </mat-card>
 </div>

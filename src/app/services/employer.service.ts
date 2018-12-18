@@ -31,4 +31,12 @@ export class EmployerService {
     return this.http.put<Employer>(`https://nexuserver.herokuapp.com/business/update/${id}`, employer, httpOptions)
   }
 
+  getEmployer(): Observable<Employer> {
+    return this.http.get<Employer>("https://nexuserver.herokuapp.com/business/all", httpOptions)
+  }
+
+  delete(id: string): Observable<Employer> {
+    return this.http.delete<Employer>(`https://nexuserver.herokuapp.com/business/delete/${id}`, httpOptions)
+  }
+
 }

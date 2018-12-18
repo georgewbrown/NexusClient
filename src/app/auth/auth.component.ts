@@ -76,25 +76,18 @@ export class AuthComponent implements OnInit {
     }
 
     redirect(isAdmin) {
-        if (sessionStorage.getItem("account") === "freelance") {
-            if (isAdmin === true) {
-                this.router.navigate(["/admin"])
-            } else {
-                this.router.navigate(["/fprofile"])
-            }
-
+        if (isAdmin === true) {
+            this.router.navigate(["/admin"])
+        } else if (sessionStorage.getItem("account") === "freelance") {
+            this.router.navigate(["/fprofile"])
         } else {
             this.router.navigate(["/bprofile"])
         }
     }
-    adminRedirect() {
-        this.router.navigate(["/admin"])
-    }
-
     onSubmit() {
         this.handleUser()
         if (this.typeOfAccount === "freelance") {
-            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect(res.employee.isAdmin) })
+            this.employeeService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.employee.id), this.redirect(res.employee.isAdmin) })
         } else {
             this.employerService.login(this.user).subscribe(res => { console.log(res), sessionStorage.setItem("token", res.sessionToken), sessionStorage.setItem("id", res.business.id), sessionStorage.setItem("account", this.typeOfAccount), this.redirect(res) })
         }

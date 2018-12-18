@@ -36,4 +36,8 @@ export class EmployeeService {
   update(employee: object, id: string): Observable<Employee> {
     return this.http.put<Employee>(`https://nexuserver.herokuapp.com/employee/update/${id}`, employee, httpOptions)
   }
+
+  delete(id: string): Observable<any> {
+    return this.http.delete(`https://nexuserver.herokuapp.com/employee/delete/${id}`, httpOptions)
+  }
 }
