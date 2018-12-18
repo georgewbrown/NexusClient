@@ -34,7 +34,7 @@ export class BusinessProfileComponent implements OnInit {
   }
 
   getAccount() {
-    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => { this.profile = res, this.posts = res.posts, console.log(this.posts) })
+    this.employerService.get(sessionStorage.getItem("id")).subscribe(res => { this.profile = res, this.posts = res.posts })
   }
 
   openForm() {
@@ -46,15 +46,15 @@ export class BusinessProfileComponent implements OnInit {
 
 
 
-    this.dialogReturn.afterClosed().subscribe(res => { this.employerService.update(res, sessionStorage.getItem("id")).subscribe(res => { console.log(res), this.getAccount() }) })
+    this.dialogReturn.afterClosed().subscribe(res => { this.employerService.update(res, sessionStorage.getItem("id")).subscribe(res => {  this.getAccount() }) })
   }
 
   postCreate(post) {
-    this.postsService.create(post).subscribe(res => { console.log(res), this.getAccount() })
+    this.postsService.create(post).subscribe(res => { this.getAccount() })
   }
 
   postUpdate(post) {
-    this.postsService.update(post.id, post).subscribe(res => { console.log(res), this.getAccount() })
+    this.postsService.update(post.id, post).subscribe(res => { this.getAccount() })
   }
 
   postDelete(id) {

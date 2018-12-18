@@ -24,7 +24,7 @@
           </mat-form-field>
           <button class="button" type="submit" [disabled]="typeOfAccount !== 'freelance' && typeOfAccount !== 'business' ">Login</button>
           <label class="signUp">Don't have an account?</label>
-          <button class="signUp" id="signUpButton" mat-button (click)="openForm()">Sign Up!</button>
+          <button class="signUp" id="signUpButton" mat-button type="button" (click)="openForm()">Sign Up!</button>
         </div>
       </form>
     </div>
