@@ -11,7 +11,6 @@ import { Employee } from "../models/employee.model"
 import { AccountCreateComponent } from '../account-create/account-create.component';
 import { MatDialog, MatDialogRef, ErrorStateMatcher } from '@angular/material';
 import { ProfileComponent } from '../profile/profile.component';
-import { TransferService } from '../services/transfer.service';
 
 @Component({
     selector: 'auth-component',
@@ -38,7 +37,6 @@ export class AuthComponent implements OnInit {
         private alertService: AlertService,
         public form: MatDialog,
         private router: Router,
-        public transferService: TransferService
     ) { }
 
     ngOnInit() {
