@@ -1,7 +1,7 @@
 # Nexus
 
 Created with a Angular.js client-side and a Node.js server-side. Nexus is a full CRUD  application that helps small businesses, find the right person for the job. 
-version 1.0.1
+`version 1.0.1`
 
 ### Prerequisites
 
