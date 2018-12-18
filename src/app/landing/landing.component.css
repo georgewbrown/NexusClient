@@ -53,12 +53,6 @@
 
 @media (min-width: 990px){
 
-/* .NavBar{
-    height: 3vh;
-    background-color: rgba(255, 255, 255, 1.0);
-    font-family: 'Poppins', sans-serif;
-} */
-
 .landing {
     background-image: url("../../assets/Nexus_Landing_Page_BKG.jpg");
     background-position-x: center; 
@@ -70,17 +64,15 @@
 }
 
 .buttons{
-    margin-top: 50vh;
-    margin-left: 31.8vw;
+    position: static;
     display: inline-block;
-
 }
 
 .button1{
     width: 20em;
     height: 2.5em;
-    /* margin-top: 35em; */
-    /* margin-left: 24em; */
+    margin-top: 35em;
+    margin-left: 24em;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, .7);
     font-family: 'Poppins' sans-serif;
@@ -91,7 +83,7 @@
 .button2{
     width: 20em;
     height: 2.5em;
-    /* margin-top: 10em; */
+    margin-top: 10em;
     margin-left: 5em;
     border-radius: 25px;
     background-color: rgba(255, 255, 255, .7);
@@ -163,5 +155,6 @@
 }
 
 }
+
 
 

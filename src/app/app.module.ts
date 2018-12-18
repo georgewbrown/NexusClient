@@ -56,11 +56,7 @@ import { UpdatePostComponent } from './update-post/update-post.component';
     ReactiveFormsModule,
   ],
   providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-<<<<<<< HEAD
-  , {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
-=======
 {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
->>>>>>> gwb
   bootstrap: [AppComponent],
   entryComponents:[AccountUpdateComponent, CreatePostComponent, UpdatePostComponent]
 })

@@ -1,6 +1,6 @@
-@media (min-width: 320px) and (max-width: 1023px){
+/* @media (min-width: 320px) and (max-width: 1023px){
     
-}
+} */
 
 .background{
     height: 100vh;
@@ -28,8 +28,10 @@
 }
 
 .authBox{
-    width: 20vw;
-    height: 50vh;
+    width: 25vw;
+    min-width: 25vw;
+    max-width: 50vw;
+    height: auto;
     background-color: rgba(56, 186, 223, .1);
     margin: 0 auto;
     margin-top: 20vh;
@@ -67,6 +69,16 @@ hr {
 }
 
 #signUpButton {
+    margin-left: 1vw;
+    margin-top: 1vh;
+}
+
+.admin{
+    font-weight: 700;
+    margin-top: 2vh;
+}
+
+#adminButton {
     margin-left: 1vw;
     margin-top: 1vh;
 }

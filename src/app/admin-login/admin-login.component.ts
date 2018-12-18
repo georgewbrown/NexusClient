@@ -23,7 +23,7 @@ error: any;
     public postsService: PostsService) {}
   ngOnInit(){
     this.getPosts()
-    this.getEmployee(this.id)
+    // this.getEmployee(this.id)
   }
 
   getPosts() {
@@ -40,9 +40,9 @@ error: any;
   // getEmployee() {
   //   this.employeeService.getEmployee().subscribe((res: any) => this.employee = res.employee)
   // }
-  employeeUpdate(employee) {
-    this.employeeService.update(employee.id, employee).subscribe(res => { console.log(res), this.getEmployee() })
-  }
+  // employeeUpdate(employee) {
+  //   this.employeeService.update(employee.id, employee).subscribe(res => { console.log(res), this.getEmployee() })
+  // }
 
   // employeeDelete(id) {
   //   this.employeeService.delete(id).subscribe(res => this.getAll())
