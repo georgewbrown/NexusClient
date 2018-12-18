@@ -1,8 +1,24 @@
 <app-navbar></app-navbar>
-<div class="row">
 
-<div *ngFor="let post of posts" id="card" class="column" style="background-color:#888888;">
-    <h1 class="sectTitle"> Job Posts </h1>
+<mat-list class="infoList">
+    <mat-list-item>{{profile?.phoneNumber}}</mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item> {{ profile?.location }} </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item> {{ profile?.website }} </mat-list-item>
+    <mat-divider></mat-divider>
+    <a href="https://nexus-client.herokuapp.com/admin#jobPosts">Manage Job Listings</a>
+    <mat-divider></mat-divider>
+    <a href="https://nexus-client.herokuapp.com/admin#freelanceAcct">Manage Freelance Accounts</a>
+    <mat-divider></mat-divider>
+    <a href="https://nexus-client.herokuapp.com/admin#bizAcct">Manage Business Accounts</a>
+    <!-- <button mat-button (click)="openForm()">Update Account</button>
+    <mat-divider></mat-divider>
+    <button mat-button (click)="createPostDialog()">Create Post</button> -->
+  </mat-list>
+
+<h1 class="sectTitle" id="jobPosts"> Job Posts </h1>
+<div *ngFor="let post of posts" id="card">
   <mat-card>
     <mat-card-title>{{ post.jobTitle }}</mat-card-title>
     <mat-card-subtitle> {{ post.name }} </mat-card-subtitle>
@@ -16,9 +32,8 @@
   </mat-card>
 </div>
 <!-- <hr /> -->
-
-<div *ngFor="let e of employee" id="card" class="column" style="background-color:blue;">
-    <h1 class="sectTitle"> Freelance Acct.</h1>
+<h1 class="sectTitle" id="freelanceAcct"> Freelance Acct.</h1>
+<div *ngFor="let e of employee" id="card" class="column">
   <mat-card>
     <mat-card-title>{{ e.name }}</mat-card-title>
     <mat-card-subtitle> {{ e.email }} </mat-card-subtitle>
@@ -39,9 +54,8 @@
   </mat-card>
 </div>
 <!-- <hr /> -->
-
-<div *ngFor="let employer of employers" id="card" class="column" style="background-color:green;">
-    <h1 class="sectTitle"> Biz Acct. </h1>
+<h1 class="sectTitle" id="bizAcct"> Biz Acct. </h1>
+<div *ngFor="let employer of employers" id="card" class="column">
   <mat-card>
     <mat-card-title>{{ employer.username }}</mat-card-title>
     <mat-card-title>{{ employer.name }}</mat-card-title>
@@ -60,5 +74,4 @@
       <button mat-button (click)="employerDelete(employer.id)">Delete Account</button>
     </mat-card-actions>
   </mat-card>
-</div>
 </div>
