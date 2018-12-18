@@ -14,12 +14,13 @@ export class AdminLoginComponent implements OnInit {
   id = sessionStorage.getItem("id")
   posts;
   employee;
+  employers;
   adminForm: FormGroup
 
 error: any;
   constructor(private fb: FormBuilder, 
     public employeeService: EmployeeService,
-    public employeerService: EmployerService,
+    public employerService: EmployerService,
     public postsService: PostsService) {}
   ngOnInit(){
     this.getPosts()
@@ -44,14 +45,14 @@ error: any;
   //   this.employeeService.update(employee.id, employee).subscribe(res => { console.log(res), this.getEmployee() })
   // }
 
-  // employeeDelete(id) {
-  //   this.employeeService.delete(id).subscribe(res => this.getAll())
-  // }
+  getEmployer() {
+    this.employerService.getEmployer().subscribe((res: any) => this.employers = res)
 
+  }
+  employerDelete(id) {
+    this.employerService.delete(id).subscribe(res => this.getEmployer())
+  }
 
-  // employeeDelete(id) {
-  //   this.employeeService.delete(id).subscribe(res => this.getAll())
-  // }
 
 
 }

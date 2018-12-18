@@ -25,10 +25,6 @@ export class EmployeeService {
     return this.http.get<Employee>(`https://nexuserver.herokuapp.com/employee/${id}`, httpOptions)
   }
 
-  getEmployee(): Observable<any[]> {
-    return this.http.get<any[]>("https://nexuserver.herokuapp.com/employee/all", httpOptions)
-  }
-
   getAll(): Observable<Employee> {
     return this.http.get<Employee>("https://nexuserver.herokuapp.com/employee/all", httpOptions)
   }
@@ -36,4 +32,8 @@ export class EmployeeService {
   update(employee: object, id: string): Observable<Employee> {
     return this.http.put<Employee>(`https://nexuserver.herokuapp.com/employee/update/${id}`, employee, httpOptions)
   }
+  delete(id: string): Observable<Employee> {
+    return this.http.delete<Employee>(`https://nexuserver.herokuapp.com/employee/delete/${id}`, httpOptions)
+  }
+
 }
