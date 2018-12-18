@@ -75,16 +75,22 @@ export class AuthComponent implements OnInit {
         }
     }
 
+    handleAccount() {
+
+    }
+
     redirect(isAdmin) {
-        if (isAdmin === true) {
+        if (isAdmin == false || isAdmin.business) {
+            if (this.typeOfAccount === "freelance") {
+                sessionStorage.setItem("account", "freelance")
+                this.router.navigate(["/fprofile"])
+            } else {
+                sessionStorage.setItem("account", "business")
+                this.router.navigate(["/bprofile"])
+            }
+        } else {
             sessionStorage.setItem("isAdmin", "true")
             this.router.navigate(["/admin"])
-        } else if (this.typeOfAccount === "freelance") {
-            sessionStorage.setItem("account", "freelance")
-            this.router.navigate(["/fprofile"])
-        } else {
-            sessionStorage.setItem("account", "business")
-            this.router.navigate(["/bprofile"])
         }
     }
     onSubmit() {
@@ -108,7 +114,7 @@ export class AuthComponent implements OnInit {
     openForm() {
         this.dialogReturn = this.form.open(AccountCreateComponent);
 
-        this.dialogReturn.afterClosed().subscribe(res => { console.log(res), this.userRegister(res) })
+        this.dialogReturn.afterClosed().subscribe(res => { if(res){ this.userRegister(res) } else {}})
     }
 
 }
