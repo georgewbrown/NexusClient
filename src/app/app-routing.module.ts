@@ -10,6 +10,8 @@ import { AuthenticationGuard } from './guards/authentication.guard';
 import { BusinessProfileComponent } from './business-profile/business-profile.component';
 import { JobPostComponent } from './job-post/job-post.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component'
+import { CanActivate } from '@angular/router/src/utils/preactivation';
+import { AdminGuard } from './guards/admin.guard';
 
 
 
@@ -22,7 +24,7 @@ const routes: Routes = [
   {path: 'bprofile', component: BusinessProfileComponent },
   {path: 'create', component: AccountCreateComponent },
   {path: 'jobposts', component: JobPostComponent },
-  {path: 'admin', component: AdminLoginComponent },
+  {path: 'admin', component: AdminLoginComponent, canActivate: [AdminGuard]},
 ]
 
 @NgModule({
