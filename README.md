@@ -1,27 +1,42 @@
-# NexusClient
+# Nexus
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+Created with a Angular.js client-side and a Node.js server-side. Nexus is a full CRUD  application that helps small businesses, find the right person for the job. 
+`version 1.0.1`
 
-## Development server
+### Prerequisites
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+You will need to have the following libraries and framework's installed to use and run this application.
 
-## Code scaffolding
+`Angular.js CLI`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`npm.js CLI`
 
-## Build
+`Node.js CLI`
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Getting Started
 
-## Running unit tests
+These instructions will get you a copy of the project aswell as get it up and running on your local machine for development and testing purposes. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Use `git clone git@github.com:ntemple1150/NexusClient.git`
 
-## Running end-to-end tests
+Then run `npm install` to install the needed dependicies to run the application
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Finally run `ng serve` for a development/test server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Further help
+## Built With
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* [Angular.js](https://angular.io/docs) - The web framework used
+* [Node.js](https://nodejs.org/en/) - Application Management
+* [npm.js](https://www.npmjs.com/) - Package Management
+
+## Authors
+
+* **Donovan Triplett** - [donotriplett](https://github.com/donotriplett)
+* **Nic Temple** - [ntemple1150](https://github.com/ntemple1150)
+* **George Brown** - [gbrown396](https://github.com/gbrown396)
+
+See also the list of [contributors](https://github.com/ntemple1150/NexusClient/graphs/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the MIT License
