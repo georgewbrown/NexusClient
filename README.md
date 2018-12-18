@@ -32,15 +32,11 @@ Finally run `ng serve` for a development/test server. Navigate to `http://localh
 ## Authors
 
 * **Donovan Triplett** - [donotriplett](https://github.com/donotriplett)
+* **Nic Temple** - [ntemple1150](https://github.com/ntemple1150)
+* **George Brown** - [gbrown396](https://github.com/gbrown396)
 
 See also the list of [contributors](https://github.com/ntemple1150/NexusClient/graphs/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+This project is licensed under the MIT License
