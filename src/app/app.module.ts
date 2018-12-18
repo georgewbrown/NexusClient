@@ -27,6 +27,7 @@ import { CreatePostComponent } from './create-post/create-post.component'
 import { AdminLoginComponent } from './admin-login/admin-login.component'
 import { createScope } from '@angular/core/src/profile/wtf_impl';
 import { UpdatePostComponent } from './update-post/update-post.component';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { UpdatePostComponent } from './update-post/update-post.component';
     CreatePostComponent,
     AdminLoginComponent,
     UpdatePostComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

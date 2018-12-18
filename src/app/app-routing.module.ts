@@ -10,6 +10,7 @@ import { AuthenticationGuard } from './guards/authentication.guard';
 import { BusinessProfileComponent } from './business-profile/business-profile.component';
 import { JobPostComponent } from './job-post/job-post.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component'
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path: 'create', component: AccountCreateComponent },
   {path: 'jobposts', component: JobPostComponent },
   {path: 'admin', component: AdminLoginComponent },
+  {path: "**", component: ErrorComponent}
 ]
 
 @NgModule({
