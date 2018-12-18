@@ -58,7 +58,7 @@ import { ErrorComponent } from './error/error.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AdminGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AdminGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }
   , {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent],
   entryComponents:[AccountUpdateComponent, CreatePostComponent, UpdatePostComponent]
