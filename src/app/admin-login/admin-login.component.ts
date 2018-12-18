@@ -14,16 +14,18 @@ export class AdminLoginComponent implements OnInit {
   id = sessionStorage.getItem("id")
   posts;
   employee;
+  employers;
   adminForm: FormGroup
 
 error: any;
   constructor(private fb: FormBuilder, 
     public employeeService: EmployeeService,
-    public employeerService: EmployerService,
+    public employerService: EmployerService,
     public postsService: PostsService) {}
   ngOnInit(){
     this.getPosts()
-    this.getEmployee(this.id)
+    this.getAll()
+    this.getEmployer()
   }
 
   getPosts() {
@@ -37,21 +39,25 @@ error: any;
     this.postsService.delete(id).subscribe(res => this.getPosts())
     console.log('this button works')
   }
-  // getEmployee() {
-  //   this.employeeService.getEmployee().subscribe((res: any) => this.employee = res.employee)
-  // }
+  getAll() {
+    this.employeeService.getAll().subscribe((res: any) => this.employee = res.employee)
+  }
   employeeUpdate(employee) {
-    this.employeeService.update(employee.id, employee).subscribe(res => { console.log(res), this.getEmployee() })
+    this.employeeService.update(employee.id, employee).subscribe(res => { console.log(res), this.getAll() })
+  }
+  
+  employeeDelete(id) {
+    this.employeeService.delete(id).subscribe(res => this.getAll())
   }
 
-  // employeeDelete(id) {
-  //   this.employeeService.delete(id).subscribe(res => this.getAll())
-  // }
+  getEmployer() {
+    this.employerService.getEmployer().subscribe((res: any) => this.employers = res)
 
+  }
+  employerDelete(id) {
+    this.employerService.delete(id).subscribe(res => this.getEmployer())
+  }
 
-  // employeeDelete(id) {
-  //   this.employeeService.delete(id).subscribe(res => this.getAll())
-  // }
 
 
 }
