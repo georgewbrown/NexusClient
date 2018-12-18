@@ -28,8 +28,17 @@ mat-card{
 }
 
 .infoList{
+  position: sticky;
+  top: 5;
+  left: 2;
   width: 15vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   background-color: #e2e2e2;
+}
+
+a{
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+  color: black;
 }
