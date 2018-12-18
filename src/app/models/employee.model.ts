@@ -16,6 +16,7 @@ export class Employee implements Deserializable {
     instagram: string;
     profilePicture: string;
     twiter: string;
+    isAdmin: boolean;
     };
     sessionToken: string;
 

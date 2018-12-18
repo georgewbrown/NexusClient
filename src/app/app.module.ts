@@ -21,7 +21,6 @@ import { AccountUpdateComponent } from './account-update/account-update.componen
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { EmployerService } from "./services/employer.service";
 import { JwtInterceptor } from "./helpers/jwt.interceptor";
-import { ErrorInterceptor } from "./helpers/error.interceptor";
 import { BusinessProfileComponent } from './business-profile/business-profile.component';
 import { JobPostComponent } from './job-post/job-post.component';
 import { CreatePostComponent } from './create-post/create-post.component'
@@ -57,7 +56,7 @@ import { UpdatePostComponent } from './update-post/update-post.component';
     ReactiveFormsModule,
   ],
   providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
-    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }, {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
+{provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent],
   entryComponents:[AccountUpdateComponent, CreatePostComponent, UpdatePostComponent]
 })
