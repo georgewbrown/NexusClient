@@ -28,6 +28,7 @@ import { AdminLoginComponent } from './admin-login/admin-login.component'
 import { createScope } from '@angular/core/src/profile/wtf_impl';
 import { UpdatePostComponent } from './update-post/update-post.component';
 import { AdminGuard } from './guards/admin.guard';
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { AdminGuard } from './guards/admin.guard';
     CreatePostComponent,
     AdminLoginComponent,
     UpdatePostComponent,
+    ErrorComponent,
   ],
   imports: [
     BrowserModule,

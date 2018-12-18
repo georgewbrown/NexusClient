@@ -12,6 +12,7 @@ import { JobPostComponent } from './job-post/job-post.component';
 import { AdminLoginComponent } from './admin-login/admin-login.component'
 import { CanActivate } from '@angular/router/src/utils/preactivation';
 import { AdminGuard } from './guards/admin.guard';
+import { ErrorComponent } from './error/error.component';
 
 
 
@@ -25,6 +26,8 @@ const routes: Routes = [
   {path: 'create', component: AccountCreateComponent },
   {path: 'jobposts', component: JobPostComponent },
   {path: 'admin', component: AdminLoginComponent, canActivate: [AdminGuard]},
+  {path: 'admin', component: AdminLoginComponent },
+  {path: "**", component: ErrorComponent}
 ]
 
 @NgModule({
