@@ -1,11 +1,10 @@
 .bizHeader{
     width: 100vw;
     height: 12.5vh;
-    background-image: url("../../assets/account_header.jpg");
+    background-image: url("../../assets/atanas-malamov-1104625-unsplash.jpg");
     background-repeat: no-repeat;
-    background-position-y: 90%;
-    background-position-x: 90%;
-    /* background-color: rgba(88, 167, 251, 0.6); */
+    background-position-y: 53%;
+    background-position-x: 50%;
     font-family: 'Poppins', sans-serif;
     text-align: left;
     padding-left: 1vw;
