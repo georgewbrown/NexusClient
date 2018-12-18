@@ -27,6 +27,7 @@ import { CreatePostComponent } from './create-post/create-post.component'
 import { AdminLoginComponent } from './admin-login/admin-login.component'
 import { createScope } from '@angular/core/src/profile/wtf_impl';
 import { UpdatePostComponent } from './update-post/update-post.component';
+import { AdminGuard } from './guards/admin.guard';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,7 @@ import { UpdatePostComponent } from './update-post/update-post.component';
     FormsModule,
     ReactiveFormsModule,
   ],
-  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AuthenticationGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+  providers: [HttpClient, AuthenticationService, AlertService, EmployeeService, AdminGuard, EmployerService, { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
   , {provide: ErrorStateMatcher, useClass: ShowOnDirtyErrorStateMatcher}],
   bootstrap: [AppComponent],
   entryComponents:[AccountUpdateComponent, CreatePostComponent, UpdatePostComponent]

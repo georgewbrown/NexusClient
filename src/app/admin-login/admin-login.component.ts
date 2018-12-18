@@ -46,7 +46,7 @@ export class AdminLoginComponent implements OnInit {
   }
 
   getEmployee() {
-    this.employeeService.getEmployee().subscribe((res: any) => { this.employee = res.employee })
+    this.employeeService.getAll().subscribe((res: any) => { this.employee = res.employee })
   }
 
   employeeUpdate(employee) {
