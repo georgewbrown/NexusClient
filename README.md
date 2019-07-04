@@ -33,7 +33,7 @@ Finally run `ng serve` for a development/test server. Navigate to `http://localh
 
 * **Donovan Triplett** - [donotriplett](https://github.com/donotriplett)
 * **Nic Temple** - [ntemple1150](https://github.com/ntemple1150)
-* **George Brown** - [gbrown396](https://github.com/gbrown396)
+* **George Brown** - [georgewbrown](https://github.com/georgewbrown)
 
 See also the list of [contributors](https://github.com/ntemple1150/NexusClient/graphs/contributors) who participated in this project.
 
